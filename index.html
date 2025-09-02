@@ -1,37 +1,2814 @@
+
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>La Mirada de Northrop Frye sobre la Biblia</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --primario: #1e3a5f;
-      --secundario: #8b7355;
-      --acento: #d4af37;
-      --neutral: #f8f6f3;
-      --silenciado: #6b7280;
-    }
 
-    body {
-      font-family: 'Playfair Display', serif;
-      background-color: white;
-      padding: 2rem;
-      color: #1e3a5f;
-    }
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Mirada de Northrop Frye sobre la Biblia: Un Mapa Mental</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --primary: #1e3a5f;
+            --secondary: #8b7355;
+            --accent: #d4af37;
+            --neutral: #f8f6f3;
+            --muted: #6b7280;
+        }
+        
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #1e3a5f 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #d4af37, #8b7355);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .toc-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100vh;
+            background: #fafafa;
+            border-right: 1px solid #e5e7eb;
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 2rem 0;
+        }
+        
+        .main-content {
+            margin-left: 280px;
+            min-height: 100vh;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d4af37, transparent);
+            margin: 4rem 0;
+        }
+        
+        .quote-highlight {
+            border-left: 4px solid #d4af37;
+            background: linear-gradient(135deg, #fafafa, #f3f4f6);
+        }
+        
+        .mindmap-container {
+            min-height: 800px;
+            max-height: 1200px;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
 
-    h1 {
-      font-size: 2rem;
-      color: var(--primario);
-    }
-  </style>
-</head>
-<body>
-  <h1>La Mirada de Northrop Frye sobre la Biblia</h1>
-  <p>Este es un ejemplo de estructura HTML para tu tarea.</p>
-</body>
+        .mermaid {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            cursor: grab;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mermaid svg {
+            max-width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .mermaid:active {
+            cursor: grabbing;
+        }
+
+        .mermaid-container {
+            display: flex;
+            justify-content: center;
+            min-height: 300px;
+            max-height: 800px;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mermaid-container .mermaid {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            cursor: grab;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mermaid-container .mermaid svg {
+            max-width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .mermaid-container .mermaid:active {
+            cursor: grabbing;
+        }
+
+        .mermaid-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mermaid-control-btn {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #374151;
+            font-size: 14px;
+            min-width: 36px;
+            height: 36px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mermaid-control-btn:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+            color: #3b82f6;
+            transform: translateY(-1px);
+        }
+
+        .mermaid-control-btn:active {
+            transform: scale(0.95);
+        }
+        
+        /* Enhanced mermaid node styling with better contrast */
+        .mermaid .node rect,
+        .mermaid .node circle,
+        .mermaid .node ellipse,
+        .mermaid .node polygon {
+            stroke-width: 2px !important;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+        
+        .mermaid .node text {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 500 !important;
+            font-size: 13px !important;
+            fill: #1f2937 !important;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+        }
+        
+        .mermaid .edgeLabel {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            border-radius: 4px !important;
+            padding: 2px 6px !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 11px !important;
+            font-weight: 500 !important;
+            color: #374151 !important;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .mermaid .edgePath path {
+            stroke: #6b7280 !important;
+            stroke-width: 2px !important;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+        }
+        
+        /* Specific node color overrides for better contrast */
+        .mermaid .node[style*="fill:#1e3a5f"] text,
+        .mermaid .node[style*="fill:#8b7355"] text,
+        .mermaid .node[style*="fill:#d4af37"] text {
+            fill: #ffffff !important;
+            font-weight: 600 !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+        }
+        
+        .mermaid .node[style*="fill:#ffffff"] text,
+        .mermaid .node[style*="fill:#f9fafb"] text {
+            fill: #1f2937 !important;
+            font-weight: 500 !important;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+        }
+
+        @media (max-width: 1024px) {
+            .toc-fixed { display: none; }
+            .main-content { margin-left: 0; }
+            .mermaid-control-btn:not(.reset-zoom) {
+                display: none;
+            }
+            .mermaid-controls {
+                top: auto;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-gradient .font-serif {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            .hero-gradient .text-xl {
+                font-size: 1rem;
+            }
+            .hero-gradient img {
+                height: auto;
+                max-height: 200px;
+            }
+            section {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            .mermaid-container {
+                padding: 15px;
+                margin: 15px 0;
+            }
+            .grid-cols-2, .grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+  </head>
+
+  <body class="bg-neutral font-sans text-gray-800">
+    <!-- Table of Contents -->
+    <nav class="toc-fixed">
+      <div class="px-6">
+        <h2 class="font-serif text-lg font-semibold text-gray-800 mb-6">Índice</h2>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a href="#introduccion" class="text-gray-600 hover:text-primary transition-colors block py-1">Introducción</a>
+          </li>
+          <li>
+            <a href="#gran-codigo" class="text-gray-600 hover:text-primary transition-colors block py-1">1. El Gran Código</a>
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a href="#estructura-quiasica" class="text-gray-500 hover:text-primary transition-colors block py-1">1.1 Estructura Quíasica</a>
+              </li>
+              <li>
+                <a href="#mitologia-occidental" class="text-gray-500 hover:text-primary transition-colors block py-1">1.2 Mitología Occidental</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#kerygma" class="text-gray-600 hover:text-primary transition-colors block py-1">2. El Lenguaje Kerygmático</a>
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a href="#kerygma-definicion" class="text-gray-500 hover:text-primary transition-colors block py-1">2.1 Definición</a>
+              </li>
+              <li>
+                <a href="#kerygma-fases" class="text-gray-500 hover:text-primary transition-colors block py-1">2.2 Fases del Lenguaje</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#tipologia" class="text-gray-600 hover:text-primary transition-colors block py-1">3. Tipología Interpretativa</a>
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a href="#estructura-unificadora" class="text-gray-500 hover:text-primary transition-colors block py-1">3.1 Estructura Unificadora</a>
+              </li>
+              <li>
+                <a href="#identidades-subyacentes" class="text-gray-500 hover:text-primary transition-colors block py-1">3.2 Identidades Subyacentes</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#mitopoesia" class="text-gray-600 hover:text-primary transition-colors block py-1">4. Mitopoesia vs Historia</a>
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a href="#narrativa-mitica" class="text-gray-500 hover:text-primary transition-colors block py-1">4.1 Narrativa Mítica</a>
+              </li>
+              <li>
+                <a href="#critica-historico" class="text-gray-500 hover:text-primary transition-colors block py-1">4.2 Crítica Histórico-Crítica</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#arquetipos" class="text-gray-600 hover:text-primary transition-colors block py-1">5. Imagen y Arquetipo</a>
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a href="#sistemas-imagineria" class="text-gray-500 hover:text-primary transition-colors block py-1">5.1 Sistemas de Imaginería</a>
+              </li>
+              <li>
+                <a href="#naturaleza-simbolo" class="text-gray-500 hover:text-primary transition-colors block py-1">5.2 Naturaleza como Símbolo</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#lenguaje-prosaico" class="text-gray-600 hover:text-primary transition-colors block py-1">6. Lenguaje y Prosa</a>
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a href="#actos-habla" class="text-gray-500 hover:text-primary transition-colors block py-1">6.1 Actos de Habla</a>
+              </li>
+              <li>
+                <a href="#narrativa-circular" class="text-gray-500 hover:text-primary transition-colors block py-1">6.2 Narrativa Circular</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#influencia-literaria" class="text-gray-600 hover:text-primary transition-colors block py-1">7. Influencia Literaria</a>
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a href="#escritura-secular" class="text-gray-500 hover:text-primary transition-colors block py-1">7.1 Escritura Secular</a>
+              </li>
+              <li>
+                <a href="#teoria-arquetipos" class="text-gray-500 hover:text-primary transition-colors block py-1">7.2 Teoría de Arquetipos</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Hero Section -->
+      <header class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 class="font-serif text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                <span class="italic">La Mirada de</span>
+                <br>
+                <span class="text-gradient">Northrop Frye</span>
+                <br>
+                <span class="italic">sobre la Biblia</span>
+              </h1>
+              <p class="text-xl text-gray-200 mb-8 leading-relaxed">
+                Un mapa mental de la visión de Frye sobre la Biblia como el "Gran Código" de la cultura occidental,
+                explorando su estructura quíasica, lenguaje kerygmático y método tipológico.
+              </p>
+              <div class="flex flex-wrap gap-4 text-sm text-gray-300">
+                <span class="flex items-center gap-2">
+                  <i class="fas fa-book"></i>
+                  El Gran Código
+                </span>
+                <span class="flex items-center gap-2">
+                  <i class="fas fa-feather-alt"></i>
+                  Anatomía de la Crítica
+                </span>
+                <span class="flex items-center gap-2">
+                  <i class="fas fa-university"></i>
+                  Crítica Literaria
+                </span>
+              </div>
+            </div>
+            <div>
+              <img src="https://kimi-img.moonshot.cn/pub/icon/spinner.svg" alt="Ancient biblical manuscript with golden light shining through stained glass windows" class="w-full h-80 object-cover rounded-lg shadow-2xl" size="medium" aspect="wide" color="yellow" style="photo" query="ancient biblical manuscript stained glass light" referrerpolicy="no-referrer" />
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Introduction -->
+      <section id="introduccion" class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div class="lg:col-span-2">
+            <h2 class="font-serif text-3xl font-bold text-gray-800 mb-6">Introducción</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+              Northrop Frye (<a href="https://macblog.mcmaster.ca/fryeblog/" class="text-primary hover:underline" target="_blank">1912-1991</a>)
+              revolucionó la comprensión de la Biblia al proponer una lectura que trasciende los enfoques puramente religiosos o históricos.
+              En su obra maestra <em>El gran código: La Biblia y la literatura</em>, Frye establece que la Biblia es el
+              <strong>"Gran Código de la cultura occidental"</strong>, una fuente primaria de mitología y arquetipos que ha moldeado
+              la literatura y el arte durante siglos.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed">
+              Su interpretación se basa en el análisis de su <strong>estructura quíasica</strong> (un "doble espejo" entre el Antiguo
+              y Nuevo Testamento), su lenguaje único de <strong>kerygma</strong> (una proclamación que trasciende lo literal y revela
+              una realidad espiritual), y su método de <strong>tipología</strong>, que revela identidades subyacentes más allá de
+              los eventos históricos.
+            </p>
+          </div>
+          <div class="quote-highlight p-6 rounded-lg">
+            <blockquote class="font-serif text-xl italic text-gray-800 mb-4">
+              "La Biblia es el Gran Código del Arte"
+            </blockquote>
+            <cite class="text-sm text-gray-600">— William Blake, citado por Frye</cite>
+            <p class="text-sm text-gray-700 mt-4">
+              Esta cita de Blake, adoptada por Frye como título de su obra, encapsula la visión de la Biblia como
+              el código primigenio que ha informado la imaginación occidental.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mind Map Section -->
+      <section class="max-w-7xl mx-auto px-6 py-8">
+        <h2 class="font-serif text-3xl font-bold text-gray-800 mb-8 text-center">Mapa Conceptual Completo</h2>
+        <div class="mindmap-container">
+          <div class="mermaid-controls">
+            <button class="mermaid-control-btn zoom-in" title="放大">
+              <i class="fas fa-search-plus"></i>
+            </button>
+            <button class="mermaid-control-btn zoom-out" title="缩小">
+              <i class="fas fa-search-minus"></i>
+            </button>
+            <button class="mermaid-control-btn reset-zoom" title="重置">
+              <i class="fas fa-expand-arrows-alt"></i>
+            </button>
+            <button class="mermaid-control-btn fullscreen" title="全屏查看">
+              <i class="fas fa-expand"></i>
+            </button>
+          </div>
+          <div class="mermaid" id="full-mindmap">
+            graph TB
+            A["La Biblia según Northrop Frye"] --> B["El Gran Código"]
+            A --> C["Kerygma"]
+            A --> D["Tipología"]
+            A --> E["Mitopoesia"]
+            A --> F["Arquetipos"]
+            A --> G["Lenguaje Prosaico"]
+            A --> H["Influencia Literaria"]
+
+            B --> B1["Gran Código de la Cultura Occidental"]
+            B --> B2["Estructura Quíasica"]
+            B --> B3["Unidad Narrativa"]
+
+            C --> C1["Proclamación Mística"]
+            C --> C2["Verdad Poética"]
+            C --> C3["Fase Superior del Lenguaje"]
+
+            D --> D1["Tipo y Antitipo"]
+            D --> D2["Doble Mirada"]
+            D --> D3["Identidades Subyacentes"]
+
+            E --> E1["Narrativa Mítica"]
+            E --> E2["Heilsgeschichte"]
+            E --> E3["Significado sobre Facticidad"]
+
+            F --> F1["Imaginería Apocalíptica"]
+            F --> F2["Imaginería Demoníaca"]
+            F --> F3["Creación, Caída, Redención"]
+
+            G --> G1["Actos de Habla"]
+            G --> G2["Prosa Poderosa"]
+            G --> G3["Verbo como Motor"]
+
+            H --> H1["Escritura Secular"]
+            H --> H2["Género Romance"]
+            H --> H3["Teoría de Arquetipos"]
+
+            style A fill:#1e3a5f,stroke:#ffffff,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+            style B fill:#8b7355,stroke:#ffffff,stroke-width:2px,color:#ffffff,font-weight:bold,font-size:14px
+            style C fill:#d4af37,stroke:#1e3a5f,stroke-width:2px,color:#1e3a5f,font-weight:bold,font-size:14px
+            style D fill:#1e3a5f,stroke:#ffffff,stroke-width:2px,color:#ffffff,font-weight:bold,font-size:14px
+            style E fill:#8b7355,stroke:#ffffff,stroke-width:2px,color:#ffffff,font-weight:bold,font-size:14px
+            style F fill:#d4af37,stroke:#1e3a5f,stroke-width:2px,color:#1e3a5f,font-weight:bold,font-size:14px
+            style G fill:#1e3a5f,stroke:#ffffff,stroke-width:2px,color:#ffffff,font-weight:bold,font-size:14px
+            style H fill:#8b7355,stroke:#ffffff,stroke-width:2px,color:#ffffff,font-weight:bold,font-size:14px
+            style B1 fill:#f9fafb,stroke:#8b7355,stroke-width:2px,color:#1f2937,font-size:12px
+            style B2 fill:#f9fafb,stroke:#8b7355,stroke-width:2px,color:#1f2937,font-size:12px
+            style B3 fill:#f9fafb,stroke:#8b7355,stroke-width:2px,color:#1f2937,font-size:12px
+            style C1 fill:#f9fafb,stroke:#d4af37,stroke-width:2px,color:#1f2937,font-size:12px
+            style C2 fill:#f9fafb,stroke:#d4af37,stroke-width:2px,color:#1f2937,font-size:12px
+            style C3 fill:#f9fafb,stroke:#d4af37,stroke-width:2px,color:#1f2937,font-size:12px
+            style D1 fill:#f9fafb,stroke:#1e3a5f,stroke-width:2px,color:#1f2937,font-size:12px
+            style D2 fill:#f9fafb,stroke:#1e3a5f,stroke-width:2px,color:#1f2937,font-size:12px
+            style D3 fill:#f9fafb,stroke:#1e3a5f,stroke-width:2px,color:#1f2937,font-size:12px
+            style E1 fill:#f9fafb,stroke:#8b7355,stroke-width:2px,color:#1f2937,font-size:12px
+            style E2 fill:#f9fafb,stroke:#8b7355,stroke-width:2px,color:#1f2937,font-size:12px
+            style E3 fill:#f9fafb,stroke:#8b7355,stroke-width:2px,color:#1f2937,font-size:12px
+            style F1 fill:#f9fafb,stroke:#d4af37,stroke-width:2px,color:#1f2937,font-size:12px
+            style F2 fill:#f9fafb,stroke:#d4af37,stroke-width:2px,color:#1f2937,font-size:12px
+            style F3 fill:#f9fafb,stroke:#d4af37,stroke-width:2px,color:#1f2937,font-size:12px
+            style G1 fill:#f9fafb,stroke:#1e3a5f,stroke-width:2px,color:#1f2937,font-size:12px
+            style G2 fill:#f9fafb,stroke:#1e3a5f,stroke-width:2px,color:#1f2937,font-size:12px
+            style G3 fill:#f9fafb,stroke:#1e3a5f,stroke-width:2px,color:#1f2937,font-size:12px
+            style H1 fill:#f9fafb,stroke:#8b7355,stroke-width:2px,color:#1f2937,font-size:12px
+            style H2 fill:#f9fafb,stroke:#8b7355,stroke-width:2px,color:#1f2937,font-size:12px
+            style H3 fill:#f9fafb,stroke:#8b7355,stroke-width:2px,color:#1f2937,font-size:12px
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Section 1: El Gran Código -->
+      <section id="gran-codigo" class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="font-serif text-4xl font-bold text-gray-800 mb-12">1. El Gran Código: La Biblia como Unidad y Fundamento Cultural</h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <div>
+            <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">1.1 La Biblia como "Gran Código" de la Cultura Occidental</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Northrop Frye establece que la Biblia no es simplemente un texto religioso, sino el
+              <strong>"Gran Código que ha moldeado la imaginación y la cultura occidental"</strong>
+              <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="text-primary hover:underline" target="_blank">[502]</a>.
+              El título mismo del libro proviene de una cita de William Blake, quien afirmó que la Biblia es "el Gran Código del Arte".
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              En lugar de abordar la Biblia desde una perspectiva teológica o histórica, Frye la examina como un crítico literario,
+              interesado en su unidad interna y su poder como un sistema de mitos y metáforas
+              <a href="https://www.dialoguejournal.com/articles/the-great-code-revealed-bible-and-literature-by-northrop-frye/" class="text-primary hover:underline" target="_blank">[519]</a>.
+            </p>
+          </div>
+          <div>
+            <img src="https://kimi-img.moonshot.cn/pub/icon/spinner.svg" alt="Ancient illuminated biblical manuscript with symbolic art" class="w-full h-64 object-cover rounded-lg shadow-lg" size="medium" aspect="wide" color="yellow" style="photo" query="illuminated biblical manuscript" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+
+        <div id="estructura-quiasica" class="mb-16">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">1.2 Unidad Estructural y Narrativa</h3>
+
+          <div class="mb-8">
+            <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">1.2.1 Estructura Quíasica o de "Doble Espejo"</h4>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              El libro de Frye se divide en dos partes: <strong>"El orden de las palabras" y "El orden de los tipos"</strong>
+              <a href="https://www.dialoguejournal.com/articles/the-great-code-revealed-bible-and-literature-by-northrop-frye/" class="text-primary hover:underline" target="_blank">[519]</a>.
+              La primera parte explora los principios básicos de interpretación a través de los conceptos de lenguaje, mito, metáfora y tipología.
+              La segunda parte revisita estos mismos cuatro temas, pero en orden inverso.
+            </p>
+            <div class="quote-highlight p-6 rounded-lg mb-6">
+              <p class="font-serif text-lg italic text-gray-800 mb-2">
+                "Esta disposición crea una estructura quíasica, o de 'doble espejo', donde cada mitad del libro refleja y revela el significado de la otra."
+              </p>
+              <cite class="text-sm text-gray-600">
+                — <a href="https://macblog.mcmaster.ca/fryeblog/what-the-great-code-is-and-does/" class="text-primary hover:underline" target="_blank">[524]</a>
+              </cite>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">1.2.2 Coherencia entre el Antiguo y el Nuevo Testamento</h4>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              La unidad de la Biblia se manifiesta en la coherencia entre los dos testamentos. A través de su método tipológico,
+              Frye demuestra que los dos testamentos no son colecciones independientes de textos, sino partes de una sola narrativa
+              que se refleja y se completa a sí misma
+              <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="text-primary hover:underline" target="_blank">[502]</a>.
+            </p>
+            <div class="quote-highlight p-6 rounded-lg">
+              <p class="font-serif text-lg italic text-gray-800 mb-2">
+                "El Antiguo Testamento se revela en el Nuevo, y el Nuevo Testamento está oculto en el Antiguo,
+                creando una 'doble mirada' en la que cada parte refleja la otra."
+              </p>
+              <cite class="text-sm text-gray-600">
+                — <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="text-primary hover:underline" target="_blank">[37]</a>
+              </cite>
+            </div>
+          </div>
+        </div>
+
+        <div id="mitologia-occidental">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">1.3 La Biblia como Fuente de Mitología Occidental</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">1.3.1 Influencia en la Literatura y el Arte Seculares</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Frye sostiene que la Biblia ha sido la fuente primaria de la mitología occidental, proporcionando los arquetipos
+                y los símbolos que han alimentado la imaginación de los artistas y escritores a lo largo de los siglos.
+                En <em>The Secular Scripture</em>, Frye explora cómo la literatura secular ha recreado y secularizado los mitos bíblicos
+                <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="text-primary hover:underline" target="_blank">[502]</a>.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">1.3.2 La Biblia como "Mito del Hombre Occidental"</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Para Frye, la Biblia es el <strong>"mito del hombre occidental"</strong>, una narrativa que define la identidad
+                y el destino de la humanidad desde una perspectiva occidental. A diferencia de otros mitos que se centran en dioses
+                y héroes, el mito bíblico es una historia sobre la humanidad
+                <a href="https://spectrum.library.concordia.ca/994328/6/Roseman_MA_F2024.pdf" class="text-primary hover:underline" target="_blank">[516]</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Section 2: Kerygma -->
+      <section id="kerygma" class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="font-serif text-4xl font-bold text-gray-800 mb-12">2. Kerygma: El Lenguaje Único de la Biblia</h2>
+
+        <div id="kerygma-definicion" class="mb-16">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">2.1 Definición de Kerygma como "Proclamación"</h3>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Frye adopta el término griego <em>kerygma</em>, que significa "proclamación" o "predicación", y le otorga un significado
+                mucho más profundo y específico en el contexto del lenguaje bíblico
+                <a href="https://macblog.mcmaster.ca/fryeblog/what-the-great-code-is-and-does/" class="text-primary hover:underline" target="_blank">[384]</a>.
+                Para él, <em>kerygma</em> no es simplemente el contenido del mensaje cristiano, sino la forma lingüística única
+                a través de la cual se transmite la revelación divina.
+              </p>
+              <p class="text-gray-700 leading-relaxed mb-6">
+                Este lenguaje no es argumentativo ni persuasivo en el sentido retórico convencional; más bien, es un acto de habla
+                que crea una nueva realidad para el oyente. Dios y Jesús, en sus expresiones de preocupación, utilizan metáforas,
+                pero no se comprometen en argumentaciones.
+              </p>
+            </div>
+            <div class="quote-highlight p-6 rounded-lg">
+              <p class="font-serif text-lg italic text-gray-800 mb-2">
+                "El kerygma es un acto místico y mistagógico que tiene el poder de iniciar al oyente en una realidad espiritual superior."
+              </p>
+              <cite class="text-sm text-gray-600">
+                — <a href="https://spectrum.library.concordia.ca/994328/6/Roseman_MA_F2024.pdf" class="text-primary hover:underline" target="_blank">[437]</a>
+              </cite>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">2.1.1 Kerygma como Acto Místico y Mistagógico</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Para Frye, el <em>kerygma</em> es mucho más que una simple proclamación verbal; es un <strong>acto místico y mistagógico</strong>
+                que tiene el poder de iniciar al oyente en una realidad espiritual superior. El término "mistagógico" se refiere a la
+                iniciación en los misterios.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">2.1.2 Revelación de una Realidad Espiritual</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                El <em>kerygma</em> es el principal mecanismo a través del cual la Biblia revela una realidad espiritual que trasciende
+                el mundo físico. El lenguaje <em>kerygmatico</em> no describe esta realidad objetivamente; más bien, la "revela" al traerla
+                a la existencia en la imaginación y la conciencia del oyente
+                <a href="https://spectrum.library.concordia.ca/994328/6/Roseman_MA_F2024.pdf" class="text-primary hover:underline" target="_blank">[75]</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-16">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">2.2 Kerygma vs. Lenguaje Literal y Descriptivo</h3>
+
+          <div class="mb-8">
+            <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">2.2.1 Verdad Poética vs. Verdad Literal</h4>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Frye argumenta que la Biblia no debe ser leída como un documento histórico o científico que pretende ofrecer una
+              descripción literal y objetiva de los hechos. Intentar leer la Biblia de esta manera es caer en el "literalismo",
+              una forma de anti-intelectualismo que malinterpreta la naturaleza del lenguaje bíblico.
+            </p>
+          </div>
+
+          <div class="mb-8">
+            <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">2.2.2 Transcendencia de la División Sujeto/Objeto</h4>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Una de las características más importantes del <em>kerygma</em> es su capacidad para <strong>trascender la división entre sujeto y objeto</strong>
+              que caracteriza al lenguaje descriptivo. El <em>kerygma</em> es un lenguaje que "nos posee", más que nosotros poseerlo,
+              y en el que la separación entre el habla activa y la recepción de la palabra desaparece
+              <a href="https://spectrum.library.concordia.ca/994328/6/Roseman_MA_F2024.pdf" class="text-primary hover:underline" target="_blank">[516]</a>.
+            </p>
+          </div>
+        </div>
+
+        <div id="kerygma-fases">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">2.3 Kerygma en el Marco de las Fases del Lenguaje de Vico</h3>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">2.3.1 Posicionamiento de Kerygma como Fase Superior</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Para situar el <em>kerygma</em> en el contexto de la historia del lenguaje, Frye se sirve de la teoría de las tres fases
+                del lenguaje de Giambattista Vico: la fase poética, la fase heroica y la fase vulgar
+                <a href="https://macblog.mcmaster.ca/fryeblog/2009/09/24/the-phases-and-modes-of-language/" class="text-primary hover:underline" target="_blank">[525]</a>.
+              </p>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Frye propone el <em>kerygma</em> como una cuarta forma de expresión, o incluso como una quinta fase que se sitúa
+                <strong>"al otro lado de lo poético"</strong>
+                <a href="https://spectrum.library.concordia.ca/994328/6/Roseman_MA_F2024.pdf" class="text-primary hover:underline" target="_blank">[535]</a>.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">2.3.2 Contraste con la Desmitologización de Bultmann</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                La postura de Frye se ve reforzada por su rechazo a la teoría de la <strong>"demitologización"</strong> del teólogo Rudolf Bultmann.
+                Mientras Bultmann argumentaba que el mensaje del Nuevo Testamento debía ser separado de su envoltura mítica,
+                Frye insiste en que el mito es el lenguaje apropiado y necesario para expresar las verdades del <em>kerygma</em>
+                <a href="https://spectrum.library.concordia.ca/994328/6/Roseman_MA_F2024.pdf" class="text-primary hover:underline" target="_blank">[530]</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Section 3: Tipología -->
+      <section id="tipologia" class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="font-serif text-4xl font-bold text-gray-800 mb-12">3. Orden de Tipos: La Tipología como Método Interpretativo</h2>
+
+        <div id="estructura-unificadora" class="mb-16">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">3.1 Tipología como Estructura Unificadora de la Biblia</h3>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">3.1.1 Relación entre Tipo y Antitipo</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                La tipología es el método interpretativo que Frye utiliza para demostrar la unidad estructural de la Biblia.
+                Este método establece una relación de correspondencia entre los eventos y personajes del Antiguo Testamento
+                (los "tipos") y su cumplimiento en el Nuevo Testamento (los "antitypos")
+                <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="text-primary hover:underline" target="_blank">[502]</a>.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                La relación entre el tipo y el antitipo no es simplemente una cuestión de predicción y cumplimiento,
+                sino de una <strong>"doble mirada" en la que cada testamento refleja y da sentido al otro</strong>
+                <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="text-primary hover:underline" target="_blank">[37]</a>.
+              </p>
+            </div>
+            <div>
+              <img src="https://kimi-img.moonshot.cn/pub/icon/spinner.svg" alt="Typological interpretation of Old and New Testament biblical events" class="w-full h-64 object-cover rounded-lg shadow-lg" size="medium" aspect="wide" query="biblical typology old new testament" referrerpolicy="no-referrer" />
+            </div>
+          </div>
+
+          <div class="quote-highlight p-6 rounded-lg mb-8">
+            <p class="font-serif text-lg italic text-gray-800 mb-2">
+              "El Antiguo Testamento se revela en el Nuevo, y el Nuevo Testamento está oculto en el Antiguo,
+              creando una estructura de eco y reverberación que une los dos testamentos en una sola narrativa."
+            </p>
+            <cite class="text-sm text-gray-600">
+              — <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="text-primary hover:underline" target="_blank">[502]</a>
+            </cite>
+          </div>
+        </div>
+
+        <div id="identidades-subyacentes" class="mb-16">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">3.2 Tipología y la Tensión entre Literatura y Teología</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">3.2.1 Uso de la Tipología como Herramienta Literaria</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Aunque Frye insiste en que su enfoque de la Biblia es literario y no teológico, su uso de la tipología lo sitúa
+                en una zona de tensión entre ambos campos. Frye adopta la tipología como una herramienta para analizar la estructura
+                y el significado de la Biblia como un texto literario.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">3.2.2 Reconocimiento de las Raíces Teológicas</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                A pesar de su enfoque literario, Frye reconoce que la tipología no puede disociarse completamente de su fundamento teológico.
+                Los críticos señalan que su hermenéutica bíblica comparte principios fundamentales con muchos teólogos cristianos modernos
+                <a href="https://dialnet.unirioja.es/descarga/articulo/1271431.pdf" class="text-primary hover:underline" target="_blank">[1]</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Section 4: Mitopoesia -->
+      <section id="mitopoesia" class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="font-serif text-4xl font-bold text-gray-800 mb-12">4. Mitopoesía vs. Historia: La Biblia como Mito, no como Crónica</h2>
+
+        <div id="narrativa-mitica" class="mb-16">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">4.1 La Biblia como Narrativa Mítica</h3>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">4.1.1 Énfasis en el Significado sobre la Facticidad</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Para Frye, la Biblia debe ser entendida primordialmente como una narrativa mítica, no como un documento histórico.
+                El término "mito", en su uso, no implica falsedad, sino una secuencia de palabras cargada de una seriedad y una importancia especiales
+                <a href="https://www.dialoguejournal.com/articles/the-great-code-revealed-bible-and-literature-by-northrop-frye/" class="text-primary hover:underline" target="_blank">[69]</a>.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                El valor de la Biblia no radica en su veracidad histórica, sino en su capacidad para transmitir verdades profundas
+                sobre la condición humana y su relación con lo divino.
+              </p>
+            </div>
+            <div class="quote-highlight p-6 rounded-lg">
+              <p class="font-serif text-lg italic text-gray-800 mb-2">
+                "Comparar los mitos de diluvio con inundaciones históricas es menos fructífero que compararlos con otros mitos de diluvio,
+                ya que su significado reside en su estructura simbólica, no en su facticidad."
+              </p>
+              <cite class="text-sm text-gray-600">
+                — <a href="https://tntlab.carterschool.gmu.edu/learn/narrative-transformation-resources/narrative-themography/myth/" class="text-primary hover:underline" target="_blank">[78]</a>
+              </cite>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">4.1.2 "Heilsgeschichte" vs. "Weltgeschichte"</h4>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Frye distingue entre dos tipos de historia: la <em>Heilsgeschichte</em> (historia de la salvación) y la
+              <em>Weltgeschichte</em> (historia del mundo). La Biblia pertenece a la primera categoría.
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+              La <em>Weltgeschichte</em> es la historia de los eventos tal como ocurrieron, una crónica de hechos sin un propósito trascendental.
+              La <em>Heilsgeschichte</em>, por otro lado, es una narrativa de redención, una historia que tiene un sentido y una dirección
+              <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="text-primary hover:underline" target="_blank">[37]</a>.
+            </p>
+          </div>
+        </div>
+
+        <div id="critica-historico">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">4.2 Crítica al Enfoque Histórico-Crítico</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">4.2.1 Rechazo de la Lectura como Documento Histórico</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Frye rechaza el enfoque histórico-crítico de la Biblia, que busca establecer la veracidad histórica de sus relatos
+                a través del análisis de fuentes y la comparación con otros documentos históricos. Para Frye, este enfoque es inadecuado
+                porque ignora la naturaleza mítica y simbólica de la Biblia.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">4.2.2 Defensa de un Enfoque Literario y Simbólico</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                En lugar del enfoque histórico-crítico, Frye defiende un enfoque literario y simbólico de la Biblia.
+                Este enfoque se centra en el análisis de la estructura narrativa, los patrones de imágenes y los símbolos de la Biblia,
+                con el objetivo de revelar su unidad y coherencia como una obra de arte.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Section 5: Arquetipos -->
+      <section id="arquetipos" class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="font-serif text-4xl font-bold text-gray-800 mb-12">5. Imagen y Arquetipo: Los Símbolos Visuales de la Biblia</h2>
+
+        <div id="sistemas-imagineria" class="mb-16">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">5.1 Sistemas de Imaginería Unificados</h3>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">5.1.1 Imaginería Apocalíptica vs. Imaginería Demoníaca</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Frye identifica dos sistemas de imaginería opuestos y unificados en la Biblia: la <strong>imaginería apocalíptica</strong>
+                y la <strong>imaginería demoníaca</strong>. La imaginería apocalíptica representa el mundo de la creación, el paraíso y la redención,
+                mientras que la imaginería demoníaca representa el mundo de la caída, el caos y la destrucción.
+              </p>
+            </div>
+            <div>
+              <img src="https://kimi-img.moonshot.cn/pub/icon/spinner.svg" alt="Biblical imagery contrast: heavenly paradise versus chaotic destruction" class="w-full h-64 object-cover rounded-lg shadow-lg" size="medium" aspect="wide" query="biblical paradise and chaos contrast" referrerpolicy="no-referrer" />
+            </div>
+          </div>
+
+          <div class="quote-highlight p-6 rounded-lg mb-8">
+            <p class="font-serif text-lg italic text-gray-800 mb-2">
+              "Estos dos sistemas de imaginería no son simplemente opuestos, sino que están intrínsecamente relacionados.
+              La imaginería demoníaca es una perversión de la imaginería apocalíptica, y la imaginería apocalíptica
+              es la restauración de la imaginería demoníaca."
+            </p>
+          </div>
+        </div>
+
+        <div id="naturaleza-simbolo">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">5.2 La Naturaleza como Símbolo</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">5.2.1 La Creación como Orden Divino</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                En la Biblia, la naturaleza no es simplemente un fondo para la acción humana, sino un símbolo del orden divino.
+                La creación, tal como se describe en el Génesis, es un acto de dar forma y orden al caos.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                El jardín del Edén es el símbolo supremo de esta armonía entre la naturaleza y lo divino
+                <a href="https://classicalchristian.org/classis/the-bible-northrop-frye-classical-christian-education-part-i/" class="text-primary hover:underline" target="_blank">[187]</a>.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">5.2.2 La Caída como Caos y Desorden</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                La caída del hombre no es simplemente un evento histórico, sino un símbolo de la entrada del caos y el desorden en el mundo.
+                La naturaleza, que antes era un reflejo del orden divino, se convierte en un lugar de alienación y sufrimiento.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                El desierto, con su sequedad y su soledad, se convierte en el símbolo supremo de la naturaleza caída.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Section 6: Lenguaje y Prosa -->
+      <section id="lenguaje-prosaico" class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="font-serif text-4xl font-bold text-gray-800 mb-12">6. La Palabra y la Prosa: La Estructura Lingüística de la Biblia</h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <div>
+            <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">6.1 El Lenguaje de la Biblia como "Prosa"</h3>
+
+            <div class="mb-8">
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">6.1.1 Actos de Habla Prosaicos</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Frye argumenta que el lenguaje de la Biblia es esencialmente prosaico, en el sentido de que está compuesto por actos de habla
+                que tienen un propósito específico. Los actos de habla prosaicos en la Biblia incluyen mandamientos, exhortaciones, oráculos y proclamaciones.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                La Biblia es una obra de "literatura plus", un texto que posee una gravedad y una seriedad que lo distinguen de la ficción puramente hipotética
+                <a href="https://spectrum.library.concordia.ca/994328/6/Roseman_MA_F2024.pdf" class="text-primary hover:underline" target="_blank">[179]</a>.
+              </p>
+            </div>
+          </div>
+          <div>
+            <img src="https://kimi-img.moonshot.cn/pub/icon/spinner.svg" alt="Ancient biblical manuscript with calligraphy" class="w-full h-80 object-cover rounded-lg shadow-lg" size="medium" aspect="wide" style="photo" query="ancient biblical manuscript calligraphy" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+
+        <div class="mb-8">
+          <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">6.1.2 Distinción entre Sentido Literal y Sentido Verbal</h4>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Frye hace una distinción fundamental entre el sentido literal y el sentido verbal de la Biblia.
+            El sentido literal se refiere a la correspondencia entre las palabras y los hechos históricos.
+            El sentido verbal se refiere al significado que surge de las conexiones y patrones internos del texto.
+          </p>
+          <p class="text-gray-700 leading-relaxed">
+            Frye argumenta que el verdadero sentido "literal" de la Biblia es su sentido verbal, no su referencia a eventos históricos externos.
+          </p>
+        </div>
+
+        <div class="mb-16">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">6.2 La Narrativa de la Biblia: De la Creación al Apocalipsis</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">6.2.1 Estructura Narrativa Circular</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                La narrativa de la Biblia, según Frye, tiene una estructura circular que va desde la creación hasta el apocalipsis.
+                El libro comienza con la creación del mundo en el Génesis y termina con la creación de un nuevo cielo y una nueva tierra en el Apocalipsis.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                Esta estructura circular sugiere que la historia no es una línea recta, sino un ciclo de caída y redención.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">6.2.2 El "Verbo" como Motor de la Narrativa</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                El "Verbo" o "Palabra" (Logos) es el motor de la narrativa bíblica. En el Evangelio de Juan, Jesús es identificado como la Palabra que se hizo carne.
+                La Palabra no es simplemente un medio de comunicación, sino una fuerza creadora y redentora.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                La Biblia, en su totalidad, es la historia de la Palabra de Dios en el mundo. La Palabra crea el mundo, juzga al mundo y redime al mundo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Section 7: Influencia Literaria -->
+      <section id="influencia-literaria" class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="font-serif text-4xl font-bold text-gray-800 mb-12">7. Influencia en la Literatura: La Biblia como Fuente de la Imaginación</h2>
+
+        <div id="escritura-secular" class="mb-16">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">7.1 La Biblia como Origen de la Literatura Secular</h3>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <div class="lg:col-span-2">
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">7.1.1 La Biblia como "Escritura Secular"</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Frye argumenta que la Biblia es la fuente de la "escritura secular", es decir, de la literatura que no es explícitamente religiosa.
+                La Biblia ha proporcionado los modelos para muchos de los géneros literarios occidentales, como la epopeya, la tragedia, la comedia y el romance.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                Los temas y símbolos de la Biblia, como la creación, la caída, el exilio y la redención, se repiten y se reelaboran en la literatura secular.
+              </p>
+            </div>
+            <div class="quote-highlight p-6 rounded-lg">
+              <p class="font-serif text-lg italic text-gray-800 mb-2">
+                "La Biblia ha proporcionado el 'gran código' que subyace a muchas obras de la literatura occidental."
+              </p>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">7.1.2 Influencia en Géneros Literarios como el Romance</h4>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Frye dedica una gran parte de su obra al análisis de la influencia de la Biblia en el género del romance.
+              El romance, con su énfasis en la aventura, la prueba y la recompensa, tiene sus raíces en las historias de los héroes bíblicos.
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+              El héroe del romance, como el héroe bíblico, es un ser excepcional que se enfrenta a una serie de pruebas y que,
+              a través de su valentía y su fe, logra superarlas y alcanzar una recompensa
+              <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="text-primary hover:underline" target="_blank">[522]</a>.
+            </p>
+          </div>
+        </div>
+
+        <div id="teoria-arquetipos">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">7.2 La Biblia y la Crítica Literaria</h3>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">7.2.1 Aplicación de la Teoría de los Arquetipos de Frye</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                La teoría de los arquetipos de Frye, tal como se presenta en <em>Anatomía de la crítica</em>, es una herramienta fundamental
+                para el análisis de la influencia de la Biblia en la literatura. Los arquetipos, según Frye, son símbolos o imágenes que se repiten
+                en la literatura y que tienen un significado universal.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                La Biblia, como la fuente primaria de la mitología occidental, es un repositorio de arquetipos que han sido utilizados
+                por innumerables escritores a lo largo de los siglos.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">7.2.2 La Biblia como Clave para Interpretar la Literatura Occidental</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Para Frye, la Biblia es la clave para interpretar la literatura occidental. La Biblia ha proporcionado el marco de referencia
+                narrativo y simbólico que ha permitido a los escritores crear nuevas y originales obras de arte.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                La influencia de la Biblia es tan profunda que, para Frye, resulta imposible entender plenamente la literatura occidental
+                sin una comprensión de sus estructuras y temas bíblicos subyacentes
+                <a href="https://classicalchristian.org/classis/the-bible-northrop-frye-classical-christian-education-part-i/" class="text-primary hover:underline" target="_blank">[334]</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="font-serif text-xl font-semibold mb-4">Referencias y Fuentes</h3>
+              <div class="space-y-2 text-sm text-gray-300">
+                <p>
+                  <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="hover:text-primary transition-colors" target="_blank">[502] Universidad de Murcia - Estudios sobre Frye</a>
+                </p>
+                <p>
+                  <a href="https://www.dialoguejournal.com/articles/the-great-code-revealed-bible-and-literature-by-northrop-frye/" class="hover:text-primary transition-colors" target="_blank">[519] Dialogue Journal - The Great Code Revealed</a>
+                </p>
+                <p>
+                  <a href="https://macblog.mcmaster.ca/fryeblog/what-the-great-code-is-and-does/" class="hover:text-primary transition-colors" target="_blank">[524] McMaster University - What the Great Code Is and Does</a>
+                </p>
+                <p>
+                  <a href="https://spectrum.library.concordia.ca/994328/6/Roseman_MA_F2024.pdf" class="hover:text-primary transition-colors" target="_blank">[535] Concordia University - Roseman MA Thesis</a>
+                </p>
+                <p>
+                  <a href="https://classicalchristian.org/classis/the-bible-northrop-frye-classical-christian-education-part-i/" class="hover:text-primary transition-colors" target="_blank">[334] Classical Christian Education</a>
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-serif text-xl font-semibold mb-4">Sobre este Mapa Mental</h3>
+              <p class="text-sm text-gray-300 leading-relaxed">
+                Esta visualización presenta la visión de Northrop Frye sobre la Biblia como el "Gran Código" de la cultura occidental,
+                explorando sus ideas sobre estructura quíasica, lenguaje kerygmático, tipología y mitopoesía.
+                El mapa se basa en las obras fundamentales de Frye, especialmente <em>El gran código</em> y <em>Anatomía de la crítica</em>.
+              </p>
+            </div>
+          </div>
+          <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+            <p>Un análisis visual de la hermenéutica bíblica de Northrop Frye</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+        // Initialize Mermaid with enhanced configuration
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'default',
+            themeVariables: {
+                primaryColor: '#1e3a5f',
+                primaryTextColor: '#ffffff',
+                primaryBorderColor: '#d4af37',
+                lineColor: '#6b7280',
+                secondaryColor: '#8b7355',
+                tertiaryColor: '#f8f6f3',
+                background: '#ffffff',
+                mainBkg: '#ffffff',
+                secondaryBkg: '#f9fafb',
+                tertiaryBkg: '#f3f4f6',
+                nodeBorder: '#d1d5db',
+                clusterBkg: '#f8fafc',
+                clusterBorder: '#e2e8f0',
+                defaultLinkColor: '#6b7280',
+                titleColor: '#1f2937',
+                edgeLabelBackground: '#ffffff',
+                nodeTextColor: '#1f2937',
+                fontFamily: 'Inter, sans-serif',
+                fontSize: '13px'
+            },
+            flowchart: {
+                useMaxWidth: false,
+                htmlLabels: true,
+                curve: 'basis',
+                padding: 20,
+                nodeSpacing: 50,
+                rankSpacing: 50,
+                diagramPadding: 20
+            },
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '13px',
+            securityLevel: 'loose'
+        });
+
+        // Initialize Mermaid Controls for zoom and pan
+        function initializeMermaidControls() {
+            const containers = document.querySelectorAll('.mermaid-container');
+
+            containers.forEach(container => {
+            const mermaidElement = container.querySelector('.mermaid');
+            let scale = 1;
+            let isDragging = false;
+            let startX, startY, translateX = 0, translateY = 0;
+
+            // 触摸相关状态
+            let isTouch = false;
+            let touchStartTime = 0;
+            let initialDistance = 0;
+            let initialScale = 1;
+            let isPinching = false;
+
+            // Zoom controls
+            const zoomInBtn = container.querySelector('.zoom-in');
+            const zoomOutBtn = container.querySelector('.zoom-out');
+            const resetBtn = container.querySelector('.reset-zoom');
+            const fullscreenBtn = container.querySelector('.fullscreen');
+
+            function updateTransform() {
+                mermaidElement.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+
+                if (scale > 1) {
+                container.classList.add('zoomed');
+                } else {
+                container.classList.remove('zoomed');
+                }
+
+                mermaidElement.style.cursor = isDragging ? 'grabbing' : 'grab';
+            }
+
+            if (zoomInBtn) {
+                zoomInBtn.addEventListener('click', () => {
+                scale = Math.min(scale * 1.25, 4);
+                updateTransform();
+                });
+            }
+
+            if (zoomOutBtn) {
+                zoomOutBtn.addEventListener('click', () => {
+                scale = Math.max(scale / 1.25, 0.3);
+                if (scale <= 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+                updateTransform();
+                });
+            }
+
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => {
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+                updateTransform();
+                });
+            }
+
+            if (fullscreenBtn) {
+                fullscreenBtn.addEventListener('click', () => {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) {
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+                });
+            }
+
+            // Mouse Events
+            mermaidElement.addEventListener('mousedown', (e) => {
+                if (isTouch) return; // 如果是触摸设备，忽略鼠标事件
+
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                mermaidElement.style.cursor = 'grabbing';
+                updateTransform();
+                e.preventDefault();
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging && !isTouch) {
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (isDragging && !isTouch) {
+                isDragging = false;
+                mermaidElement.style.cursor = 'grab';
+                updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseleave', () => {
+                if (isDragging && !isTouch) {
+                isDragging = false;
+                mermaidElement.style.cursor = 'grab';
+                updateTransform();
+                }
+            });
+
+            // 获取两点之间的距离
+            function getTouchDistance(touch1, touch2) {
+                return Math.hypot(
+                touch2.clientX - touch1.clientX,
+                touch2.clientY - touch1.clientY
+                );
+            }
+
+            // Touch Events - 触摸事件处理
+            mermaidElement.addEventListener('touchstart', (e) => {
+                isTouch = true;
+                touchStartTime = Date.now();
+
+                if (e.touches.length === 1) {
+                // 单指拖动
+                isPinching = false;
+                isDragging = true;
+
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+
+                } else if (e.touches.length === 2) {
+                // 双指缩放
+                isPinching = true;
+                isDragging = false;
+
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                initialDistance = getTouchDistance(touch1, touch2);
+                initialScale = scale;
+                }
+
+                e.preventDefault();
+            }, { passive: false });
+
+            mermaidElement.addEventListener('touchmove', (e) => {
+                if (e.touches.length === 1 && isDragging && !isPinching) {
+                // 单指拖动
+                const touch = e.touches[0];
+                translateX = touch.clientX - startX;
+                translateY = touch.clientY - startY;
+                updateTransform();
+
+                } else if (e.touches.length === 2 && isPinching) {
+                // 双指缩放
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                const currentDistance = getTouchDistance(touch1, touch2);
+
+                if (initialDistance > 0) {
+                    const newScale = Math.min(Math.max(
+                    initialScale * (currentDistance / initialDistance),
+                    0.3
+                    ), 4);
+                    scale = newScale;
+                    updateTransform();
+                }
+                }
+
+                e.preventDefault();
+            }, { passive: false });
+
+            mermaidElement.addEventListener('touchend', (e) => {
+                // 重置状态
+                if (e.touches.length === 0) {
+                isDragging = false;
+                isPinching = false;
+                initialDistance = 0;
+
+                // 延迟重置isTouch，避免鼠标事件立即触发
+                setTimeout(() => {
+                    isTouch = false;
+                }, 100);
+                } else if (e.touches.length === 1 && isPinching) {
+                // 从双指变为单指，切换为拖动模式
+                isPinching = false;
+                isDragging = true;
+
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+                }
+
+                updateTransform();
+            });
+
+            mermaidElement.addEventListener('touchcancel', (e) => {
+                isDragging = false;
+                isPinching = false;
+                initialDistance = 0;
+
+                setTimeout(() => {
+                isTouch = false;
+                }, 100);
+
+                updateTransform();
+            });
+
+            // Enhanced wheel zoom with better center point handling
+            container.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const rect = container.getBoundingClientRect();
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                const newScale = Math.min(Math.max(scale * delta, 0.3), 4);
+
+                // Adjust translation to zoom towards center
+                if (newScale !== scale) {
+                const scaleDiff = newScale / scale;
+                translateX = translateX * scaleDiff;
+                translateY = translateY * scaleDiff;
+                scale = newScale;
+
+                if (scale <= 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+
+                updateTransform();
+                }
+            });
+
+            // Initialize display
+            updateTransform();
+            });
+        }
+
+        // Initialize mermaid controls when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeMermaidControls();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+  </body>
+
 </html>
+<!DOCTYPE html><html lang="es"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>La Mirada de Northrop Frye sobre la Biblia: Un Mapa Mental</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js"></script>
+    <style>
+        :root {
+            --primary: #1e3a5f;
+            --secondary: #8b7355;
+            --accent: #d4af37;
+            --neutral: #f8f6f3;
+            --muted: #6b7280;
+        }
+        
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-sans { font-family: 'Inter', sans-serif; }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2d5a87 50%, #1e3a5f 100%);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #d4af37, #8b7355);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .toc-fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100vh;
+            background: #fafafa;
+            border-right: 1px solid #e5e7eb;
+            z-index: 1000;
+            overflow-y: auto;
+            padding: 2rem 0;
+        }
+        
+        .main-content {
+            margin-left: 280px;
+            min-height: 100vh;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #d4af37, transparent);
+            margin: 4rem 0;
+        }
+        
+        .quote-highlight {
+            border-left: 4px solid #d4af37;
+            background: linear-gradient(135deg, #fafafa, #f3f4f6);
+        }
+        
+        .mindmap-container {
+            min-height: 800px;
+            max-height: 1200px;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mermaid {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            cursor: grab;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mermaid svg {
+            max-width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .mermaid:active {
+            cursor: grabbing;
+        }
+
+        .mermaid-container {
+            display: flex;
+            justify-content: center;
+            min-height: 300px;
+            max-height: 800px;
+            background: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mermaid-container .mermaid {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+            cursor: grab;
+            transition: transform 0.3s ease;
+            transform-origin: center center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            touch-action: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .mermaid-container .mermaid svg {
+            max-width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .mermaid-container .mermaid:active {
+            cursor: grabbing;
+        }
+
+        .mermaid-controls {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            display: flex;
+            gap: 10px;
+            z-index: 20;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .mermaid-control-btn {
+            background: #ffffff;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 10px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #374151;
+            font-size: 14px;
+            min-width: 36px;
+            height: 36px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mermaid-control-btn:hover {
+            background: #f8fafc;
+            border-color: #3b82f6;
+            color: #3b82f6;
+            transform: translateY(-1px);
+        }
+
+        .mermaid-control-btn:active {
+            transform: scale(0.95);
+        }
+        
+        /* Enhanced mermaid node styling with better contrast */
+        .mermaid .node rect,
+        .mermaid .node circle,
+        .mermaid .node ellipse,
+        .mermaid .node polygon {
+            stroke-width: 2px !important;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+        }
+        
+        .mermaid .node text {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 500 !important;
+            font-size: 13px !important;
+            fill: #1f2937 !important;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+        }
+        
+        .mermaid .edgeLabel {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            border-radius: 4px !important;
+            padding: 2px 6px !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 11px !important;
+            font-weight: 500 !important;
+            color: #374151 !important;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        .mermaid .edgePath path {
+            stroke: #6b7280 !important;
+            stroke-width: 2px !important;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+        }
+        
+        /* Specific node color overrides for better contrast */
+        .mermaid .node[style*="fill:#1e3a5f"] text,
+        .mermaid .node[style*="fill:#8b7355"] text,
+        .mermaid .node[style*="fill:#d4af37"] text {
+            fill: #ffffff !important;
+            font-weight: 600 !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+        }
+        
+        .mermaid .node[style*="fill:#ffffff"] text,
+        .mermaid .node[style*="fill:#f9fafb"] text {
+            fill: #1f2937 !important;
+            font-weight: 500 !important;
+            text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+        }
+
+        @media (max-width: 1024px) {
+            .toc-fixed { display: none; }
+            .main-content { margin-left: 0; }
+            .mermaid-control-btn:not(.reset-zoom) {
+                display: none;
+            }
+            .mermaid-controls {
+                top: auto;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-gradient .font-serif {
+                font-size: 2.5rem;
+                line-height: 1.2;
+            }
+            .hero-gradient .text-xl {
+                font-size: 1rem;
+            }
+            .hero-gradient img {
+                height: auto;
+                max-height: 200px;
+            }
+            section {
+                padding-left: 1rem !important;
+                padding-right: 1rem !important;
+            }
+            .mermaid-container {
+                padding: 15px;
+                margin: 15px 0;
+            }
+            .grid-cols-2, .grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+  </head>
+
+  <body class="bg-neutral font-sans text-gray-800">
+    <!-- Table of Contents -->
+    <nav class="toc-fixed">
+      <div class="px-6">
+        <h2 class="font-serif text-lg font-semibold text-gray-800 mb-6">Índice</h2>
+        <ul class="space-y-3 text-sm">
+          <li>
+            <a href="#introduccion" class="text-gray-600 hover:text-primary transition-colors block py-1">Introducción</a>
+          </li>
+          <li>
+            <a href="#gran-codigo" class="text-gray-600 hover:text-primary transition-colors block py-1">1. El Gran Código</a>
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a href="#estructura-quiasica" class="text-gray-500 hover:text-primary transition-colors block py-1">1.1 Estructura Quíasica</a>
+              </li>
+              <li>
+                <a href="#mitologia-occidental" class="text-gray-500 hover:text-primary transition-colors block py-1">1.2 Mitología Occidental</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#kerygma" class="text-gray-600 hover:text-primary transition-colors block py-1">2. El Lenguaje Kerygmático</a>
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a href="#kerygma-definicion" class="text-gray-500 hover:text-primary transition-colors block py-1">2.1 Definición</a>
+              </li>
+              <li>
+                <a href="#kerygma-fases" class="text-gray-500 hover:text-primary transition-colors block py-1">2.2 Fases del Lenguaje</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#tipologia" class="text-gray-600 hover:text-primary transition-colors block py-1">3. Tipología Interpretativa</a>
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a href="#estructura-unificadora" class="text-gray-500 hover:text-primary transition-colors block py-1">3.1 Estructura Unificadora</a>
+              </li>
+              <li>
+                <a href="#identidades-subyacentes" class="text-gray-500 hover:text-primary transition-colors block py-1">3.2 Identidades Subyacentes</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#mitopoesia" class="text-gray-600 hover:text-primary transition-colors block py-1">4. Mitopoesia vs Historia</a>
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a href="#narrativa-mitica" class="text-gray-500 hover:text-primary transition-colors block py-1">4.1 Narrativa Mítica</a>
+              </li>
+              <li>
+                <a href="#critica-historico" class="text-gray-500 hover:text-primary transition-colors block py-1">4.2 Crítica Histórico-Crítica</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#arquetipos" class="text-gray-600 hover:text-primary transition-colors block py-1">5. Imagen y Arquetipo</a>
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a href="#sistemas-imagineria" class="text-gray-500 hover:text-primary transition-colors block py-1">5.1 Sistemas de Imaginería</a>
+              </li>
+              <li>
+                <a href="#naturaleza-simbolo" class="text-gray-500 hover:text-primary transition-colors block py-1">5.2 Naturaleza como Símbolo</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#lenguaje-prosaico" class="text-gray-600 hover:text-primary transition-colors block py-1">6. Lenguaje y Prosa</a>
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a href="#actos-habla" class="text-gray-500 hover:text-primary transition-colors block py-1">6.1 Actos de Habla</a>
+              </li>
+              <li>
+                <a href="#narrativa-circular" class="text-gray-500 hover:text-primary transition-colors block py-1">6.2 Narrativa Circular</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="#influencia-literaria" class="text-gray-600 hover:text-primary transition-colors block py-1">7. Influencia Literaria</a>
+            <ul class="ml-4 mt-2 space-y-2">
+              <li>
+                <a href="#escritura-secular" class="text-gray-500 hover:text-primary transition-colors block py-1">7.1 Escritura Secular</a>
+              </li>
+              <li>
+                <a href="#teoria-arquetipos" class="text-gray-500 hover:text-primary transition-colors block py-1">7.2 Teoría de Arquetipos</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Hero Section -->
+      <header class="hero-gradient text-white">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h1 class="font-serif text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                <span class="italic">La Mirada de</span>
+                <br/>
+                <span class="text-gradient">Northrop Frye</span>
+                <br/>
+                <span class="italic">sobre la Biblia</span>
+              </h1>
+              <p class="text-xl text-gray-200 mb-8 leading-relaxed">
+                Un mapa mental de la visión de Frye sobre la Biblia como el &#34;Gran Código&#34; de la cultura occidental,
+                explorando su estructura quíasica, lenguaje kerygmático y método tipológico.
+              </p>
+              <div class="flex flex-wrap gap-4 text-sm text-gray-300">
+                <span class="flex items-center gap-2">
+                  <i class="fas fa-book"></i>
+                  El Gran Código
+                </span>
+                <span class="flex items-center gap-2">
+                  <i class="fas fa-feather-alt"></i>
+                  Anatomía de la Crítica
+                </span>
+                <span class="flex items-center gap-2">
+                  <i class="fas fa-university"></i>
+                  Crítica Literaria
+                </span>
+              </div>
+            </div>
+            <div>
+              <img src="https://kimi-web-img.moonshot.cn/img/media.architecturaldigest.com/b8b8dc522dfc2dea3df0f587ea5d09885a7752ae.jpg" alt="Ancient biblical manuscript with golden light shining through stained glass windows" class="w-full h-80 object-cover rounded-lg shadow-2xl" size="medium" aspect="wide" color="yellow" style="photo" query="ancient biblical manuscript stained glass light" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Introduction -->
+      <section id="introduccion" class="max-w-7xl mx-auto px-6 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div class="lg:col-span-2">
+            <h2 class="font-serif text-3xl font-bold text-gray-800 mb-6">Introducción</h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-6">
+              Northrop Frye (<a href="https://macblog.mcmaster.ca/fryeblog/" class="text-primary hover:underline" target="_blank">1912-1991</a>)
+              revolucionó la comprensión de la Biblia al proponer una lectura que trasciende los enfoques puramente religiosos o históricos.
+              En su obra maestra <em>El gran código: La Biblia y la literatura</em>, Frye establece que la Biblia es el
+              <strong>&#34;Gran Código de la cultura occidental&#34;</strong>, una fuente primaria de mitología y arquetipos que ha moldeado
+              la literatura y el arte durante siglos.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed">
+              Su interpretación se basa en el análisis de su <strong>estructura quíasica</strong> (un &#34;doble espejo&#34; entre el Antiguo
+              y Nuevo Testamento), su lenguaje único de <strong>kerygma</strong> (una proclamación que trasciende lo literal y revela
+              una realidad espiritual), y su método de <strong>tipología</strong>, que revela identidades subyacentes más allá de
+              los eventos históricos.
+            </p>
+          </div>
+          <div class="quote-highlight p-6 rounded-lg">
+            <blockquote class="font-serif text-xl italic text-gray-800 mb-4">
+              &#34;La Biblia es el Gran Código del Arte&#34;
+            </blockquote>
+            <cite class="text-sm text-gray-600">— William Blake, citado por Frye</cite>
+            <p class="text-sm text-gray-700 mt-4">
+              Esta cita de Blake, adoptada por Frye como título de su obra, encapsula la visión de la Biblia como
+              el código primigenio que ha informado la imaginación occidental.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mind Map Section -->
+      <section class="max-w-7xl mx-auto px-6 py-8">
+        <h2 class="font-serif text-3xl font-bold text-gray-800 mb-8 text-center">Mapa Conceptual Completo</h2>
+        <div class="mindmap-container">
+          <div class="mermaid-controls">
+            <button class="mermaid-control-btn zoom-in" title="放大">
+              <i class="fas fa-search-plus"></i>
+            </button>
+            <button class="mermaid-control-btn zoom-out" title="缩小">
+              <i class="fas fa-search-minus"></i>
+            </button>
+            <button class="mermaid-control-btn reset-zoom" title="重置">
+              <i class="fas fa-expand-arrows-alt"></i>
+            </button>
+            <button class="mermaid-control-btn fullscreen" title="全屏查看">
+              <i class="fas fa-expand"></i>
+            </button>
+          </div>
+          <div class="mermaid" id="full-mindmap">
+            graph TB
+            A[&#34;La Biblia según Northrop Frye&#34;] --&gt; B[&#34;El Gran Código&#34;]
+            A --&gt; C[&#34;Kerygma&#34;]
+            A --&gt; D[&#34;Tipología&#34;]
+            A --&gt; E[&#34;Mitopoesia&#34;]
+            A --&gt; F[&#34;Arquetipos&#34;]
+            A --&gt; G[&#34;Lenguaje Prosaico&#34;]
+            A --&gt; H[&#34;Influencia Literaria&#34;]
+
+            B --&gt; B1[&#34;Gran Código de la Cultura Occidental&#34;]
+            B --&gt; B2[&#34;Estructura Quíasica&#34;]
+            B --&gt; B3[&#34;Unidad Narrativa&#34;]
+
+            C --&gt; C1[&#34;Proclamación Mística&#34;]
+            C --&gt; C2[&#34;Verdad Poética&#34;]
+            C --&gt; C3[&#34;Fase Superior del Lenguaje&#34;]
+
+            D --&gt; D1[&#34;Tipo y Antitipo&#34;]
+            D --&gt; D2[&#34;Doble Mirada&#34;]
+            D --&gt; D3[&#34;Identidades Subyacentes&#34;]
+
+            E --&gt; E1[&#34;Narrativa Mítica&#34;]
+            E --&gt; E2[&#34;Heilsgeschichte&#34;]
+            E --&gt; E3[&#34;Significado sobre Facticidad&#34;]
+
+            F --&gt; F1[&#34;Imaginería Apocalíptica&#34;]
+            F --&gt; F2[&#34;Imaginería Demoníaca&#34;]
+            F --&gt; F3[&#34;Creación, Caída, Redención&#34;]
+
+            G --&gt; G1[&#34;Actos de Habla&#34;]
+            G --&gt; G2[&#34;Prosa Poderosa&#34;]
+            G --&gt; G3[&#34;Verbo como Motor&#34;]
+
+            H --&gt; H1[&#34;Escritura Secular&#34;]
+            H --&gt; H2[&#34;Género Romance&#34;]
+            H --&gt; H3[&#34;Teoría de Arquetipos&#34;]
+
+            style A fill:#1e3a5f,stroke:#ffffff,stroke-width:3px,color:#ffffff,font-weight:bold,font-size:16px
+            style B fill:#8b7355,stroke:#ffffff,stroke-width:2px,color:#ffffff,font-weight:bold,font-size:14px
+            style C fill:#d4af37,stroke:#1e3a5f,stroke-width:2px,color:#1e3a5f,font-weight:bold,font-size:14px
+            style D fill:#1e3a5f,stroke:#ffffff,stroke-width:2px,color:#ffffff,font-weight:bold,font-size:14px
+            style E fill:#8b7355,stroke:#ffffff,stroke-width:2px,color:#ffffff,font-weight:bold,font-size:14px
+            style F fill:#d4af37,stroke:#1e3a5f,stroke-width:2px,color:#1e3a5f,font-weight:bold,font-size:14px
+            style G fill:#1e3a5f,stroke:#ffffff,stroke-width:2px,color:#ffffff,font-weight:bold,font-size:14px
+            style H fill:#8b7355,stroke:#ffffff,stroke-width:2px,color:#ffffff,font-weight:bold,font-size:14px
+            style B1 fill:#f9fafb,stroke:#8b7355,stroke-width:2px,color:#1f2937,font-size:12px
+            style B2 fill:#f9fafb,stroke:#8b7355,stroke-width:2px,color:#1f2937,font-size:12px
+            style B3 fill:#f9fafb,stroke:#8b7355,stroke-width:2px,color:#1f2937,font-size:12px
+            style C1 fill:#f9fafb,stroke:#d4af37,stroke-width:2px,color:#1f2937,font-size:12px
+            style C2 fill:#f9fafb,stroke:#d4af37,stroke-width:2px,color:#1f2937,font-size:12px
+            style C3 fill:#f9fafb,stroke:#d4af37,stroke-width:2px,color:#1f2937,font-size:12px
+            style D1 fill:#f9fafb,stroke:#1e3a5f,stroke-width:2px,color:#1f2937,font-size:12px
+            style D2 fill:#f9fafb,stroke:#1e3a5f,stroke-width:2px,color:#1f2937,font-size:12px
+            style D3 fill:#f9fafb,stroke:#1e3a5f,stroke-width:2px,color:#1f2937,font-size:12px
+            style E1 fill:#f9fafb,stroke:#8b7355,stroke-width:2px,color:#1f2937,font-size:12px
+            style E2 fill:#f9fafb,stroke:#8b7355,stroke-width:2px,color:#1f2937,font-size:12px
+            style E3 fill:#f9fafb,stroke:#8b7355,stroke-width:2px,color:#1f2937,font-size:12px
+            style F1 fill:#f9fafb,stroke:#d4af37,stroke-width:2px,color:#1f2937,font-size:12px
+            style F2 fill:#f9fafb,stroke:#d4af37,stroke-width:2px,color:#1f2937,font-size:12px
+            style F3 fill:#f9fafb,stroke:#d4af37,stroke-width:2px,color:#1f2937,font-size:12px
+            style G1 fill:#f9fafb,stroke:#1e3a5f,stroke-width:2px,color:#1f2937,font-size:12px
+            style G2 fill:#f9fafb,stroke:#1e3a5f,stroke-width:2px,color:#1f2937,font-size:12px
+            style G3 fill:#f9fafb,stroke:#1e3a5f,stroke-width:2px,color:#1f2937,font-size:12px
+            style H1 fill:#f9fafb,stroke:#8b7355,stroke-width:2px,color:#1f2937,font-size:12px
+            style H2 fill:#f9fafb,stroke:#8b7355,stroke-width:2px,color:#1f2937,font-size:12px
+            style H3 fill:#f9fafb,stroke:#8b7355,stroke-width:2px,color:#1f2937,font-size:12px
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Section 1: El Gran Código -->
+      <section id="gran-codigo" class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="font-serif text-4xl font-bold text-gray-800 mb-12">1. El Gran Código: La Biblia como Unidad y Fundamento Cultural</h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <div>
+            <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">1.1 La Biblia como &#34;Gran Código&#34; de la Cultura Occidental</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Northrop Frye establece que la Biblia no es simplemente un texto religioso, sino el
+              <strong>&#34;Gran Código que ha moldeado la imaginación y la cultura occidental&#34;</strong>
+              <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="text-primary hover:underline" target="_blank">[502]</a>.
+              El título mismo del libro proviene de una cita de William Blake, quien afirmó que la Biblia es &#34;el Gran Código del Arte&#34;.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              En lugar de abordar la Biblia desde una perspectiva teológica o histórica, Frye la examina como un crítico literario,
+              interesado en su unidad interna y su poder como un sistema de mitos y metáforas
+              <a href="https://www.dialoguejournal.com/articles/the-great-code-revealed-bible-and-literature-by-northrop-frye/" class="text-primary hover:underline" target="_blank">[519]</a>.
+            </p>
+          </div>
+          <div>
+            <img src="https://kimi-web-img.moonshot.cn/img/cdn.thecollector.com/a6636cad552f82c6101308199d56f4d60f391955.jpg" alt="Ancient illuminated biblical manuscript with symbolic art" class="w-full h-64 object-cover rounded-lg shadow-lg" size="medium" aspect="wide" color="yellow" style="photo" query="illuminated biblical manuscript" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+          </div>
+        </div>
+
+        <div id="estructura-quiasica" class="mb-16">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">1.2 Unidad Estructural y Narrativa</h3>
+
+          <div class="mb-8">
+            <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">1.2.1 Estructura Quíasica o de &#34;Doble Espejo&#34;</h4>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              El libro de Frye se divide en dos partes: <strong>&#34;El orden de las palabras&#34; y &#34;El orden de los tipos&#34;</strong>
+              <a href="https://www.dialoguejournal.com/articles/the-great-code-revealed-bible-and-literature-by-northrop-frye/" class="text-primary hover:underline" target="_blank">[519]</a>.
+              La primera parte explora los principios básicos de interpretación a través de los conceptos de lenguaje, mito, metáfora y tipología.
+              La segunda parte revisita estos mismos cuatro temas, pero en orden inverso.
+            </p>
+            <div class="quote-highlight p-6 rounded-lg mb-6">
+              <p class="font-serif text-lg italic text-gray-800 mb-2">
+                &#34;Esta disposición crea una estructura quíasica, o de &#39;doble espejo&#39;, donde cada mitad del libro refleja y revela el significado de la otra.&#34;
+              </p>
+              <cite class="text-sm text-gray-600">
+                — <a href="https://macblog.mcmaster.ca/fryeblog/what-the-great-code-is-and-does/" class="text-primary hover:underline" target="_blank">[524]</a>
+              </cite>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">1.2.2 Coherencia entre el Antiguo y el Nuevo Testamento</h4>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              La unidad de la Biblia se manifiesta en la coherencia entre los dos testamentos. A través de su método tipológico,
+              Frye demuestra que los dos testamentos no son colecciones independientes de textos, sino partes de una sola narrativa
+              que se refleja y se completa a sí misma
+              <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="text-primary hover:underline" target="_blank">[502]</a>.
+            </p>
+            <div class="quote-highlight p-6 rounded-lg">
+              <p class="font-serif text-lg italic text-gray-800 mb-2">
+                &#34;El Antiguo Testamento se revela en el Nuevo, y el Nuevo Testamento está oculto en el Antiguo,
+                creando una &#39;doble mirada&#39; en la que cada parte refleja la otra.&#34;
+              </p>
+              <cite class="text-sm text-gray-600">
+                — <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="text-primary hover:underline" target="_blank">[37]</a>
+              </cite>
+            </div>
+          </div>
+        </div>
+
+        <div id="mitologia-occidental">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">1.3 La Biblia como Fuente de Mitología Occidental</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">1.3.1 Influencia en la Literatura y el Arte Seculares</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Frye sostiene que la Biblia ha sido la fuente primaria de la mitología occidental, proporcionando los arquetipos
+                y los símbolos que han alimentado la imaginación de los artistas y escritores a lo largo de los siglos.
+                En <em>The Secular Scripture</em>, Frye explora cómo la literatura secular ha recreado y secularizado los mitos bíblicos
+                <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="text-primary hover:underline" target="_blank">[502]</a>.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">1.3.2 La Biblia como &#34;Mito del Hombre Occidental&#34;</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Para Frye, la Biblia es el <strong>&#34;mito del hombre occidental&#34;</strong>, una narrativa que define la identidad
+                y el destino de la humanidad desde una perspectiva occidental. A diferencia de otros mitos que se centran en dioses
+                y héroes, el mito bíblico es una historia sobre la humanidad
+                <a href="https://spectrum.library.concordia.ca/994328/6/Roseman_MA_F2024.pdf" class="text-primary hover:underline" target="_blank">[516]</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Section 2: Kerygma -->
+      <section id="kerygma" class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="font-serif text-4xl font-bold text-gray-800 mb-12">2. Kerygma: El Lenguaje Único de la Biblia</h2>
+
+        <div id="kerygma-definicion" class="mb-16">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">2.1 Definición de Kerygma como &#34;Proclamación&#34;</h3>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-2">
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Frye adopta el término griego <em>kerygma</em>, que significa &#34;proclamación&#34; o &#34;predicación&#34;, y le otorga un significado
+                mucho más profundo y específico en el contexto del lenguaje bíblico
+                <a href="https://macblog.mcmaster.ca/fryeblog/what-the-great-code-is-and-does/" class="text-primary hover:underline" target="_blank">[384]</a>.
+                Para él, <em>kerygma</em> no es simplemente el contenido del mensaje cristiano, sino la forma lingüística única
+                a través de la cual se transmite la revelación divina.
+              </p>
+              <p class="text-gray-700 leading-relaxed mb-6">
+                Este lenguaje no es argumentativo ni persuasivo en el sentido retórico convencional; más bien, es un acto de habla
+                que crea una nueva realidad para el oyente. Dios y Jesús, en sus expresiones de preocupación, utilizan metáforas,
+                pero no se comprometen en argumentaciones.
+              </p>
+            </div>
+            <div class="quote-highlight p-6 rounded-lg">
+              <p class="font-serif text-lg italic text-gray-800 mb-2">
+                &#34;El kerygma es un acto místico y mistagógico que tiene el poder de iniciar al oyente en una realidad espiritual superior.&#34;
+              </p>
+              <cite class="text-sm text-gray-600">
+                — <a href="https://spectrum.library.concordia.ca/994328/6/Roseman_MA_F2024.pdf" class="text-primary hover:underline" target="_blank">[437]</a>
+              </cite>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">2.1.1 Kerygma como Acto Místico y Mistagógico</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Para Frye, el <em>kerygma</em> es mucho más que una simple proclamación verbal; es un <strong>acto místico y mistagógico</strong>
+                que tiene el poder de iniciar al oyente en una realidad espiritual superior. El término &#34;mistagógico&#34; se refiere a la
+                iniciación en los misterios.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">2.1.2 Revelación de una Realidad Espiritual</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                El <em>kerygma</em> es el principal mecanismo a través del cual la Biblia revela una realidad espiritual que trasciende
+                el mundo físico. El lenguaje <em>kerygmatico</em> no describe esta realidad objetivamente; más bien, la &#34;revela&#34; al traerla
+                a la existencia en la imaginación y la conciencia del oyente
+                <a href="https://spectrum.library.concordia.ca/994328/6/Roseman_MA_F2024.pdf" class="text-primary hover:underline" target="_blank">[75]</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-16">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">2.2 Kerygma vs. Lenguaje Literal y Descriptivo</h3>
+
+          <div class="mb-8">
+            <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">2.2.1 Verdad Poética vs. Verdad Literal</h4>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Frye argumenta que la Biblia no debe ser leída como un documento histórico o científico que pretende ofrecer una
+              descripción literal y objetiva de los hechos. Intentar leer la Biblia de esta manera es caer en el &#34;literalismo&#34;,
+              una forma de anti-intelectualismo que malinterpreta la naturaleza del lenguaje bíblico.
+            </p>
+          </div>
+
+          <div class="mb-8">
+            <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">2.2.2 Transcendencia de la División Sujeto/Objeto</h4>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Una de las características más importantes del <em>kerygma</em> es su capacidad para <strong>trascender la división entre sujeto y objeto</strong>
+              que caracteriza al lenguaje descriptivo. El <em>kerygma</em> es un lenguaje que &#34;nos posee&#34;, más que nosotros poseerlo,
+              y en el que la separación entre el habla activa y la recepción de la palabra desaparece
+              <a href="https://spectrum.library.concordia.ca/994328/6/Roseman_MA_F2024.pdf" class="text-primary hover:underline" target="_blank">[516]</a>.
+            </p>
+          </div>
+        </div>
+
+        <div id="kerygma-fases">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">2.3 Kerygma en el Marco de las Fases del Lenguaje de Vico</h3>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">2.3.1 Posicionamiento de Kerygma como Fase Superior</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Para situar el <em>kerygma</em> en el contexto de la historia del lenguaje, Frye se sirve de la teoría de las tres fases
+                del lenguaje de Giambattista Vico: la fase poética, la fase heroica y la fase vulgar
+                <a href="https://macblog.mcmaster.ca/fryeblog/2009/09/24/the-phases-and-modes-of-language/" class="text-primary hover:underline" target="_blank">[525]</a>.
+              </p>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Frye propone el <em>kerygma</em> como una cuarta forma de expresión, o incluso como una quinta fase que se sitúa
+                <strong>&#34;al otro lado de lo poético&#34;</strong>
+                <a href="https://spectrum.library.concordia.ca/994328/6/Roseman_MA_F2024.pdf" class="text-primary hover:underline" target="_blank">[535]</a>.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">2.3.2 Contraste con la Desmitologización de Bultmann</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                La postura de Frye se ve reforzada por su rechazo a la teoría de la <strong>&#34;demitologización&#34;</strong> del teólogo Rudolf Bultmann.
+                Mientras Bultmann argumentaba que el mensaje del Nuevo Testamento debía ser separado de su envoltura mítica,
+                Frye insiste en que el mito es el lenguaje apropiado y necesario para expresar las verdades del <em>kerygma</em>
+                <a href="https://spectrum.library.concordia.ca/994328/6/Roseman_MA_F2024.pdf" class="text-primary hover:underline" target="_blank">[530]</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Section 3: Tipología -->
+      <section id="tipologia" class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="font-serif text-4xl font-bold text-gray-800 mb-12">3. Orden de Tipos: La Tipología como Método Interpretativo</h2>
+
+        <div id="estructura-unificadora" class="mb-16">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">3.1 Tipología como Estructura Unificadora de la Biblia</h3>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">3.1.1 Relación entre Tipo y Antitipo</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                La tipología es el método interpretativo que Frye utiliza para demostrar la unidad estructural de la Biblia.
+                Este método establece una relación de correspondencia entre los eventos y personajes del Antiguo Testamento
+                (los &#34;tipos&#34;) y su cumplimiento en el Nuevo Testamento (los &#34;antitypos&#34;)
+                <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="text-primary hover:underline" target="_blank">[502]</a>.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                La relación entre el tipo y el antitipo no es simplemente una cuestión de predicción y cumplimiento,
+                sino de una <strong>&#34;doble mirada&#34; en la que cada testamento refleja y da sentido al otro</strong>
+                <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="text-primary hover:underline" target="_blank">[37]</a>.
+              </p>
+            </div>
+            <div>
+              <img src="https://ark-content-generation-v2-cn-beijing.tos-cn-beijing.volces.com/doubao-seedream-3-0-t2i/0217567796079240b5206b6c0f3bb2682a16c13f4ce95f38bf223.jpeg?X-Tos-Algorithm=TOS4-HMAC-SHA256&amp;X-Tos-Credential=AKLTYWJkZTExNjA1ZDUyNDc3YzhjNTM5OGIyNjBhNDcyOTQ%2F20250902%2Fcn-beijing%2Ftos%2Frequest&amp;X-Tos-Date=20250902T022010Z&amp;X-Tos-Expires=86400&amp;X-Tos-Signature=2091d6674279c07a611ccf7cbde3e9c5e3b855d13ae78c9a6d318f9bda5a48f0&amp;X-Tos-SignedHeaders=host&amp;x-tos-process=image%2Fwatermark%2Cimage_YXNzZXRzL3dhdGVybWFyay5wbmc_eC10b3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsUF85" alt="Typological interpretation of Old and New Testament biblical events" class="w-full h-64 object-cover rounded-lg shadow-lg" size="medium" aspect="wide" query="biblical typology old new testament" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+            </div>
+          </div>
+
+          <div class="quote-highlight p-6 rounded-lg mb-8">
+            <p class="font-serif text-lg italic text-gray-800 mb-2">
+              &#34;El Antiguo Testamento se revela en el Nuevo, y el Nuevo Testamento está oculto en el Antiguo,
+              creando una estructura de eco y reverberación que une los dos testamentos en una sola narrativa.&#34;
+            </p>
+            <cite class="text-sm text-gray-600">
+              — <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="text-primary hover:underline" target="_blank">[502]</a>
+            </cite>
+          </div>
+        </div>
+
+        <div id="identidades-subyacentes" class="mb-16">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">3.2 Tipología y la Tensión entre Literatura y Teología</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">3.2.1 Uso de la Tipología como Herramienta Literaria</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Aunque Frye insiste en que su enfoque de la Biblia es literario y no teológico, su uso de la tipología lo sitúa
+                en una zona de tensión entre ambos campos. Frye adopta la tipología como una herramienta para analizar la estructura
+                y el significado de la Biblia como un texto literario.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">3.2.2 Reconocimiento de las Raíces Teológicas</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                A pesar de su enfoque literario, Frye reconoce que la tipología no puede disociarse completamente de su fundamento teológico.
+                Los críticos señalan que su hermenéutica bíblica comparte principios fundamentales con muchos teólogos cristianos modernos
+                <a href="https://dialnet.unirioja.es/descarga/articulo/1271431.pdf" class="text-primary hover:underline" target="_blank">[1]</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Section 4: Mitopoesia -->
+      <section id="mitopoesia" class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="font-serif text-4xl font-bold text-gray-800 mb-12">4. Mitopoesía vs. Historia: La Biblia como Mito, no como Crónica</h2>
+
+        <div id="narrativa-mitica" class="mb-16">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">4.1 La Biblia como Narrativa Mítica</h3>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">4.1.1 Énfasis en el Significado sobre la Facticidad</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Para Frye, la Biblia debe ser entendida primordialmente como una narrativa mítica, no como un documento histórico.
+                El término &#34;mito&#34;, en su uso, no implica falsedad, sino una secuencia de palabras cargada de una seriedad y una importancia especiales
+                <a href="https://www.dialoguejournal.com/articles/the-great-code-revealed-bible-and-literature-by-northrop-frye/" class="text-primary hover:underline" target="_blank">[69]</a>.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                El valor de la Biblia no radica en su veracidad histórica, sino en su capacidad para transmitir verdades profundas
+                sobre la condición humana y su relación con lo divino.
+              </p>
+            </div>
+            <div class="quote-highlight p-6 rounded-lg">
+              <p class="font-serif text-lg italic text-gray-800 mb-2">
+                &#34;Comparar los mitos de diluvio con inundaciones históricas es menos fructífero que compararlos con otros mitos de diluvio,
+                ya que su significado reside en su estructura simbólica, no en su facticidad.&#34;
+              </p>
+              <cite class="text-sm text-gray-600">
+                — <a href="https://tntlab.carterschool.gmu.edu/learn/narrative-transformation-resources/narrative-themography/myth/" class="text-primary hover:underline" target="_blank">[78]</a>
+              </cite>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">4.1.2 &#34;Heilsgeschichte&#34; vs. &#34;Weltgeschichte&#34;</h4>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Frye distingue entre dos tipos de historia: la <em>Heilsgeschichte</em> (historia de la salvación) y la
+              <em>Weltgeschichte</em> (historia del mundo). La Biblia pertenece a la primera categoría.
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+              La <em>Weltgeschichte</em> es la historia de los eventos tal como ocurrieron, una crónica de hechos sin un propósito trascendental.
+              La <em>Heilsgeschichte</em>, por otro lado, es una narrativa de redención, una historia que tiene un sentido y una dirección
+              <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="text-primary hover:underline" target="_blank">[37]</a>.
+            </p>
+          </div>
+        </div>
+
+        <div id="critica-historico">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">4.2 Crítica al Enfoque Histórico-Crítico</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">4.2.1 Rechazo de la Lectura como Documento Histórico</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Frye rechaza el enfoque histórico-crítico de la Biblia, que busca establecer la veracidad histórica de sus relatos
+                a través del análisis de fuentes y la comparación con otros documentos históricos. Para Frye, este enfoque es inadecuado
+                porque ignora la naturaleza mítica y simbólica de la Biblia.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">4.2.2 Defensa de un Enfoque Literario y Simbólico</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                En lugar del enfoque histórico-crítico, Frye defiende un enfoque literario y simbólico de la Biblia.
+                Este enfoque se centra en el análisis de la estructura narrativa, los patrones de imágenes y los símbolos de la Biblia,
+                con el objetivo de revelar su unidad y coherencia como una obra de arte.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Section 5: Arquetipos -->
+      <section id="arquetipos" class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="font-serif text-4xl font-bold text-gray-800 mb-12">5. Imagen y Arquetipo: Los Símbolos Visuales de la Biblia</h2>
+
+        <div id="sistemas-imagineria" class="mb-16">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">5.1 Sistemas de Imaginería Unificados</h3>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">5.1.1 Imaginería Apocalíptica vs. Imaginería Demoníaca</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Frye identifica dos sistemas de imaginería opuestos y unificados en la Biblia: la <strong>imaginería apocalíptica</strong>
+                y la <strong>imaginería demoníaca</strong>. La imaginería apocalíptica representa el mundo de la creación, el paraíso y la redención,
+                mientras que la imaginería demoníaca representa el mundo de la caída, el caos y la destrucción.
+              </p>
+            </div>
+            <div>
+              <img src="https://kimi-web-img.moonshot.cn/img/static.wikia.nocookie.net/6e1386437b2dfce9b8bb8b074d265a574218b70d" alt="Biblical imagery contrast: heavenly paradise versus chaotic destruction" class="w-full h-64 object-cover rounded-lg shadow-lg" size="medium" aspect="wide" query="biblical paradise and chaos contrast" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+            </div>
+          </div>
+
+          <div class="quote-highlight p-6 rounded-lg mb-8">
+            <p class="font-serif text-lg italic text-gray-800 mb-2">
+              &#34;Estos dos sistemas de imaginería no son simplemente opuestos, sino que están intrínsecamente relacionados.
+              La imaginería demoníaca es una perversión de la imaginería apocalíptica, y la imaginería apocalíptica
+              es la restauración de la imaginería demoníaca.&#34;
+            </p>
+          </div>
+        </div>
+
+        <div id="naturaleza-simbolo">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">5.2 La Naturaleza como Símbolo</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">5.2.1 La Creación como Orden Divino</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                En la Biblia, la naturaleza no es simplemente un fondo para la acción humana, sino un símbolo del orden divino.
+                La creación, tal como se describe en el Génesis, es un acto de dar forma y orden al caos.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                El jardín del Edén es el símbolo supremo de esta armonía entre la naturaleza y lo divino
+                <a href="https://classicalchristian.org/classis/the-bible-northrop-frye-classical-christian-education-part-i/" class="text-primary hover:underline" target="_blank">[187]</a>.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">5.2.2 La Caída como Caos y Desorden</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                La caída del hombre no es simplemente un evento histórico, sino un símbolo de la entrada del caos y el desorden en el mundo.
+                La naturaleza, que antes era un reflejo del orden divino, se convierte en un lugar de alienación y sufrimiento.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                El desierto, con su sequedad y su soledad, se convierte en el símbolo supremo de la naturaleza caída.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Section 6: Lenguaje y Prosa -->
+      <section id="lenguaje-prosaico" class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="font-serif text-4xl font-bold text-gray-800 mb-12">6. La Palabra y la Prosa: La Estructura Lingüística de la Biblia</h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          <div>
+            <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">6.1 El Lenguaje de la Biblia como &#34;Prosa&#34;</h3>
+
+            <div class="mb-8">
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">6.1.1 Actos de Habla Prosaicos</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Frye argumenta que el lenguaje de la Biblia es esencialmente prosaico, en el sentido de que está compuesto por actos de habla
+                que tienen un propósito específico. Los actos de habla prosaicos en la Biblia incluyen mandamientos, exhortaciones, oráculos y proclamaciones.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                La Biblia es una obra de &#34;literatura plus&#34;, un texto que posee una gravedad y una seriedad que lo distinguen de la ficción puramente hipotética
+                <a href="https://spectrum.library.concordia.ca/994328/6/Roseman_MA_F2024.pdf" class="text-primary hover:underline" target="_blank">[179]</a>.
+              </p>
+            </div>
+          </div>
+          <div>
+            <img src="https://kimi-web-img.moonshot.cn/img/brewminate.com/f32d0ed01cc767859c1634dd3149eff48dbaea4b.png" alt="Ancient biblical manuscript with calligraphy" class="w-full h-80 object-cover rounded-lg shadow-lg" size="medium" aspect="wide" style="photo" query="ancient biblical manuscript calligraphy" referrerpolicy="no-referrer" data-modified="1" data-score="0.00"/>
+          </div>
+        </div>
+
+        <div class="mb-8">
+          <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">6.1.2 Distinción entre Sentido Literal y Sentido Verbal</h4>
+          <p class="text-gray-700 leading-relaxed mb-4">
+            Frye hace una distinción fundamental entre el sentido literal y el sentido verbal de la Biblia.
+            El sentido literal se refiere a la correspondencia entre las palabras y los hechos históricos.
+            El sentido verbal se refiere al significado que surge de las conexiones y patrones internos del texto.
+          </p>
+          <p class="text-gray-700 leading-relaxed">
+            Frye argumenta que el verdadero sentido &#34;literal&#34; de la Biblia es su sentido verbal, no su referencia a eventos históricos externos.
+          </p>
+        </div>
+
+        <div class="mb-16">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">6.2 La Narrativa de la Biblia: De la Creación al Apocalipsis</h3>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">6.2.1 Estructura Narrativa Circular</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                La narrativa de la Biblia, según Frye, tiene una estructura circular que va desde la creación hasta el apocalipsis.
+                El libro comienza con la creación del mundo en el Génesis y termina con la creación de un nuevo cielo y una nueva tierra en el Apocalipsis.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                Esta estructura circular sugiere que la historia no es una línea recta, sino un ciclo de caída y redención.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">6.2.2 El &#34;Verbo&#34; como Motor de la Narrativa</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                El &#34;Verbo&#34; o &#34;Palabra&#34; (Logos) es el motor de la narrativa bíblica. En el Evangelio de Juan, Jesús es identificado como la Palabra que se hizo carne.
+                La Palabra no es simplemente un medio de comunicación, sino una fuerza creadora y redentora.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                La Biblia, en su totalidad, es la historia de la Palabra de Dios en el mundo. La Palabra crea el mundo, juzga al mundo y redime al mundo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider max-w-7xl mx-auto"></div>
+
+      <!-- Section 7: Influencia Literaria -->
+      <section id="influencia-literaria" class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="font-serif text-4xl font-bold text-gray-800 mb-12">7. Influencia en la Literatura: La Biblia como Fuente de la Imaginación</h2>
+
+        <div id="escritura-secular" class="mb-16">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">7.1 La Biblia como Origen de la Literatura Secular</h3>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+            <div class="lg:col-span-2">
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">7.1.1 La Biblia como &#34;Escritura Secular&#34;</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Frye argumenta que la Biblia es la fuente de la &#34;escritura secular&#34;, es decir, de la literatura que no es explícitamente religiosa.
+                La Biblia ha proporcionado los modelos para muchos de los géneros literarios occidentales, como la epopeya, la tragedia, la comedia y el romance.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                Los temas y símbolos de la Biblia, como la creación, la caída, el exilio y la redención, se repiten y se reelaboran en la literatura secular.
+              </p>
+            </div>
+            <div class="quote-highlight p-6 rounded-lg">
+              <p class="font-serif text-lg italic text-gray-800 mb-2">
+                &#34;La Biblia ha proporcionado el &#39;gran código&#39; que subyace a muchas obras de la literatura occidental.&#34;
+              </p>
+            </div>
+          </div>
+
+          <div class="mb-8">
+            <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">7.1.2 Influencia en Géneros Literarios como el Romance</h4>
+            <p class="text-gray-700 leading-relaxed mb-4">
+              Frye dedica una gran parte de su obra al análisis de la influencia de la Biblia en el género del romance.
+              El romance, con su énfasis en la aventura, la prueba y la recompensa, tiene sus raíces en las historias de los héroes bíblicos.
+            </p>
+            <p class="text-gray-700 leading-relaxed">
+              El héroe del romance, como el héroe bíblico, es un ser excepcional que se enfrenta a una serie de pruebas y que,
+              a través de su valentía y su fe, logra superarlas y alcanzar una recompensa
+              <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="text-primary hover:underline" target="_blank">[522]</a>.
+            </p>
+          </div>
+        </div>
+
+        <div id="teoria-arquetipos">
+          <h3 class="font-serif text-2xl font-semibold text-gray-800 mb-6">7.2 La Biblia y la Crítica Literaria</h3>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">7.2.1 Aplicación de la Teoría de los Arquetipos de Frye</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                La teoría de los arquetipos de Frye, tal como se presenta en <em>Anatomía de la crítica</em>, es una herramienta fundamental
+                para el análisis de la influencia de la Biblia en la literatura. Los arquetipos, según Frye, son símbolos o imágenes que se repiten
+                en la literatura y que tienen un significado universal.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                La Biblia, como la fuente primaria de la mitología occidental, es un repositorio de arquetipos que han sido utilizados
+                por innumerables escritores a lo largo de los siglos.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-serif text-xl font-semibold text-gray-800 mb-4">7.2.2 La Biblia como Clave para Interpretar la Literatura Occidental</h4>
+              <p class="text-gray-700 leading-relaxed mb-4">
+                Para Frye, la Biblia es la clave para interpretar la literatura occidental. La Biblia ha proporcionado el marco de referencia
+                narrativo y simbólico que ha permitido a los escritores crear nuevas y originales obras de arte.
+              </p>
+              <p class="text-gray-700 leading-relaxed">
+                La influencia de la Biblia es tan profunda que, para Frye, resulta imposible entender plenamente la literatura occidental
+                sin una comprensión de sus estructuras y temas bíblicos subyacentes
+                <a href="https://classicalchristian.org/classis/the-bible-northrop-frye-classical-christian-education-part-i/" class="text-primary hover:underline" target="_blank">[334]</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="font-serif text-xl font-semibold mb-4">Referencias y Fuentes</h3>
+              <div class="space-y-2 text-sm text-gray-300">
+                <p>
+                  <a href="https://www.um.es/tonosdigital/znum23/secciones/estudios-3-frey.htm" class="hover:text-primary transition-colors" target="_blank">[502] Universidad de Murcia - Estudios sobre Frye</a>
+                </p>
+                <p>
+                  <a href="https://www.dialoguejournal.com/articles/the-great-code-revealed-bible-and-literature-by-northrop-frye/" class="hover:text-primary transition-colors" target="_blank">[519] Dialogue Journal - The Great Code Revealed</a>
+                </p>
+                <p>
+                  <a href="https://macblog.mcmaster.ca/fryeblog/what-the-great-code-is-and-does/" class="hover:text-primary transition-colors" target="_blank">[524] McMaster University - What the Great Code Is and Does</a>
+                </p>
+                <p>
+                  <a href="https://spectrum.library.concordia.ca/994328/6/Roseman_MA_F2024.pdf" class="hover:text-primary transition-colors" target="_blank">[535] Concordia University - Roseman MA Thesis</a>
+                </p>
+                <p>
+                  <a href="https://classicalchristian.org/classis/the-bible-northrop-frye-classical-christian-education-part-i/" class="hover:text-primary transition-colors" target="_blank">[334] Classical Christian Education</a>
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3 class="font-serif text-xl font-semibold mb-4">Sobre este Mapa Mental</h3>
+              <p class="text-sm text-gray-300 leading-relaxed">
+                Esta visualización presenta la visión de Northrop Frye sobre la Biblia como el &#34;Gran Código&#34; de la cultura occidental,
+                explorando sus ideas sobre estructura quíasica, lenguaje kerygmático, tipología y mitopoesía.
+                El mapa se basa en las obras fundamentales de Frye, especialmente <em>El gran código</em> y <em>Anatomía de la crítica</em>.
+              </p>
+            </div>
+          </div>
+          <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-400">
+            <p>Un análisis visual de la hermenéutica bíblica de Northrop Frye</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+        // Initialize Mermaid with enhanced configuration
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'default',
+            themeVariables: {
+                primaryColor: '#1e3a5f',
+                primaryTextColor: '#ffffff',
+                primaryBorderColor: '#d4af37',
+                lineColor: '#6b7280',
+                secondaryColor: '#8b7355',
+                tertiaryColor: '#f8f6f3',
+                background: '#ffffff',
+                mainBkg: '#ffffff',
+                secondaryBkg: '#f9fafb',
+                tertiaryBkg: '#f3f4f6',
+                nodeBorder: '#d1d5db',
+                clusterBkg: '#f8fafc',
+                clusterBorder: '#e2e8f0',
+                defaultLinkColor: '#6b7280',
+                titleColor: '#1f2937',
+                edgeLabelBackground: '#ffffff',
+                nodeTextColor: '#1f2937',
+                fontFamily: 'Inter, sans-serif',
+                fontSize: '13px'
+            },
+            flowchart: {
+                useMaxWidth: false,
+                htmlLabels: true,
+                curve: 'basis',
+                padding: 20,
+                nodeSpacing: 50,
+                rankSpacing: 50,
+                diagramPadding: 20
+            },
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '13px',
+            securityLevel: 'loose'
+        });
+
+        // Initialize Mermaid Controls for zoom and pan
+        function initializeMermaidControls() {
+            const containers = document.querySelectorAll('.mermaid-container');
+
+            containers.forEach(container => {
+            const mermaidElement = container.querySelector('.mermaid');
+            let scale = 1;
+            let isDragging = false;
+            let startX, startY, translateX = 0, translateY = 0;
+
+            // 触摸相关状态
+            let isTouch = false;
+            let touchStartTime = 0;
+            let initialDistance = 0;
+            let initialScale = 1;
+            let isPinching = false;
+
+            // Zoom controls
+            const zoomInBtn = container.querySelector('.zoom-in');
+            const zoomOutBtn = container.querySelector('.zoom-out');
+            const resetBtn = container.querySelector('.reset-zoom');
+            const fullscreenBtn = container.querySelector('.fullscreen');
+
+            function updateTransform() {
+                mermaidElement.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+
+                if (scale > 1) {
+                container.classList.add('zoomed');
+                } else {
+                container.classList.remove('zoomed');
+                }
+
+                mermaidElement.style.cursor = isDragging ? 'grabbing' : 'grab';
+            }
+
+            if (zoomInBtn) {
+                zoomInBtn.addEventListener('click', () => {
+                scale = Math.min(scale * 1.25, 4);
+                updateTransform();
+                });
+            }
+
+            if (zoomOutBtn) {
+                zoomOutBtn.addEventListener('click', () => {
+                scale = Math.max(scale / 1.25, 0.3);
+                if (scale <= 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+                updateTransform();
+                });
+            }
+
+            if (resetBtn) {
+                resetBtn.addEventListener('click', () => {
+                scale = 1;
+                translateX = 0;
+                translateY = 0;
+                updateTransform();
+                });
+            }
+
+            if (fullscreenBtn) {
+                fullscreenBtn.addEventListener('click', () => {
+                if (container.requestFullscreen) {
+                    container.requestFullscreen();
+                } else if (container.webkitRequestFullscreen) {
+                    container.webkitRequestFullscreen();
+                } else if (container.msRequestFullscreen) {
+                    container.msRequestFullscreen();
+                }
+                });
+            }
+
+            // Mouse Events
+            mermaidElement.addEventListener('mousedown', (e) => {
+                if (isTouch) return; // 如果是触摸设备，忽略鼠标事件
+
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                mermaidElement.style.cursor = 'grabbing';
+                updateTransform();
+                e.preventDefault();
+            });
+
+            document.addEventListener('mousemove', (e) => {
+                if (isDragging && !isTouch) {
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseup', () => {
+                if (isDragging && !isTouch) {
+                isDragging = false;
+                mermaidElement.style.cursor = 'grab';
+                updateTransform();
+                }
+            });
+
+            document.addEventListener('mouseleave', () => {
+                if (isDragging && !isTouch) {
+                isDragging = false;
+                mermaidElement.style.cursor = 'grab';
+                updateTransform();
+                }
+            });
+
+            // 获取两点之间的距离
+            function getTouchDistance(touch1, touch2) {
+                return Math.hypot(
+                touch2.clientX - touch1.clientX,
+                touch2.clientY - touch1.clientY
+                );
+            }
+
+            // Touch Events - 触摸事件处理
+            mermaidElement.addEventListener('touchstart', (e) => {
+                isTouch = true;
+                touchStartTime = Date.now();
+
+                if (e.touches.length === 1) {
+                // 单指拖动
+                isPinching = false;
+                isDragging = true;
+
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+
+                } else if (e.touches.length === 2) {
+                // 双指缩放
+                isPinching = true;
+                isDragging = false;
+
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                initialDistance = getTouchDistance(touch1, touch2);
+                initialScale = scale;
+                }
+
+                e.preventDefault();
+            }, { passive: false });
+
+            mermaidElement.addEventListener('touchmove', (e) => {
+                if (e.touches.length === 1 && isDragging && !isPinching) {
+                // 单指拖动
+                const touch = e.touches[0];
+                translateX = touch.clientX - startX;
+                translateY = touch.clientY - startY;
+                updateTransform();
+
+                } else if (e.touches.length === 2 && isPinching) {
+                // 双指缩放
+                const touch1 = e.touches[0];
+                const touch2 = e.touches[1];
+                const currentDistance = getTouchDistance(touch1, touch2);
+
+                if (initialDistance > 0) {
+                    const newScale = Math.min(Math.max(
+                    initialScale * (currentDistance / initialDistance),
+                    0.3
+                    ), 4);
+                    scale = newScale;
+                    updateTransform();
+                }
+                }
+
+                e.preventDefault();
+            }, { passive: false });
+
+            mermaidElement.addEventListener('touchend', (e) => {
+                // 重置状态
+                if (e.touches.length === 0) {
+                isDragging = false;
+                isPinching = false;
+                initialDistance = 0;
+
+                // 延迟重置isTouch，避免鼠标事件立即触发
+                setTimeout(() => {
+                    isTouch = false;
+                }, 100);
+                } else if (e.touches.length === 1 && isPinching) {
+                // 从双指变为单指，切换为拖动模式
+                isPinching = false;
+                isDragging = true;
+
+                const touch = e.touches[0];
+                startX = touch.clientX - translateX;
+                startY = touch.clientY - translateY;
+                }
+
+                updateTransform();
+            });
+
+            mermaidElement.addEventListener('touchcancel', (e) => {
+                isDragging = false;
+                isPinching = false;
+                initialDistance = 0;
+
+                setTimeout(() => {
+                isTouch = false;
+                }, 100);
+
+                updateTransform();
+            });
+
+            // Enhanced wheel zoom with better center point handling
+            container.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const rect = container.getBoundingClientRect();
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+
+                const delta = e.deltaY > 0 ? 0.9 : 1.1;
+                const newScale = Math.min(Math.max(scale * delta, 0.3), 4);
+
+                // Adjust translation to zoom towards center
+                if (newScale !== scale) {
+                const scaleDiff = newScale / scale;
+                translateX = translateX * scaleDiff;
+                translateY = translateY * scaleDiff;
+                scale = newScale;
+
+                if (scale <= 1) {
+                    translateX = 0;
+                    translateY = 0;
+                }
+
+                updateTransform();
+                }
+            });
+
+            // Initialize display
+            updateTransform();
+            });
+        }
+
+        // Initialize mermaid controls when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeMermaidControls();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+  
+
+</body></html>
